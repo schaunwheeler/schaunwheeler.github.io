@@ -1,0 +1,1819 @@
+{
+    "name": "Consumer Expenditure", 
+    "children": [
+        {
+            "name": "Toys and Games", 
+            "children": [
+                {
+                    "name": "Video Games", 
+                    "children": [
+                        {
+                            "name": "Video Games Software"
+                        }, 
+                        {
+                            "name": "Digital Gaming"
+                        }, 
+                        {
+                            "name": "Video Games Hardware"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Traditional Toys and Games"
+                }
+            ]
+        }, 
+        {
+            "name": "Eyewear", 
+            "children": [
+                {
+                    "name": "Contact Lenses"
+                }, 
+                {
+                    "name": "Spectacles"
+                }
+            ]
+        }, 
+        {
+            "name": "Retailing", 
+            "children": [
+                {
+                    "name": "Super Premium Beauty and Personal Care", 
+                    "children": [
+                        {
+                            "name": "Super Premium Bath and Shower"
+                        }, 
+                        {
+                            "name": "Super Premium Deodorants"
+                        }, 
+                        {
+                            "name": "Super Premium Sun Care"
+                        }, 
+                        {
+                            "name": "Super Premium Hand Care"
+                        }, 
+                        {
+                            "name": "Super Premium Skin Care", 
+                            "children": [
+                                {
+                                    "name": "Super Premium Facial Care"
+                                }, 
+                                {
+                                    "name": "Super Premium Body Care"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Super Premium Sets/Kits"
+                        }, 
+                        {
+                            "name": "Super Premium Fragrances", 
+                            "children": [
+                                {
+                                    "name": "Super Premium Men's Fragrances"
+                                }, 
+                                {
+                                    "name": "Super Premium Women's Fragrances"
+                                }, 
+                                {
+                                    "name": "Super Premium Unisex Fragrances"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Super Premium Haircare"
+                        }, 
+                        {
+                            "name": "Super Premium Colour Cosmetics"
+                        }, 
+                        {
+                            "name": "Super Premium Baby and Child-Specific Products"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Luxury Writing Instruments"
+                }, 
+                {
+                    "name": "Luxury Stationery"
+                }
+            ]
+        }, 
+        {
+            "name": "Beauty and Personal Care", 
+            "children": [
+                {
+                    "name": "Deodorants"
+                }, 
+                {
+                    "name": "Sets/Kits"
+                }, 
+                {
+                    "name": "Sun Care"
+                }, 
+                {
+                    "name": "Depilatories"
+                }, 
+                {
+                    "name": "Skin Care"
+                }, 
+                {
+                    "name": "Mass Cosmetics"
+                }, 
+                {
+                    "name": "Fragrances"
+                }, 
+                {
+                    "name": "Colour Cosmetics"
+                }, 
+                {
+                    "name": "Oral Care"
+                }, 
+                {
+                    "name": "Bath and Shower"
+                }, 
+                {
+                    "name": "Oral Care Excl Power Toothbrushes"
+                }, 
+                {
+                    "name": "Premium Cosmetics"
+                }, 
+                {
+                    "name": "Men's Grooming"
+                }, 
+                {
+                    "name": "Hair Care"
+                }, 
+                {
+                    "name": "Baby and Child-specific Products"
+                }
+            ]
+        }, 
+        {
+            "name": "Consumer Electronics", 
+            "children": [
+                {
+                    "name": "In-Car Entertainment"
+                }, 
+                {
+                    "name": "Computers and Peripherals"
+                }, 
+                {
+                    "name": "In-Home Consumer Electronics", 
+                    "children": [
+                        {
+                            "name": "Home Audio and Cinema"
+                        }, 
+                        {
+                            "name": "Home Video", 
+                            "children": [
+                                {
+                                    "name": "Video Players"
+                                }, 
+                                {
+                                    "name": "Televisions and Projectors"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Portable Consumer Electronics", 
+                    "children": [
+                        {
+                            "name": "Imaging Devices"
+                        }, 
+                        {
+                            "name": "Mobile Phones"
+                        }, 
+                        {
+                            "name": "Portable Players"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Health and Wellness", 
+            "children": [
+                {
+                    "name": "Health and Wellness by Prime Positioning", 
+                    "children": [
+                        {
+                            "name": "Energy Boosting", 
+                            "children": [
+                                {
+                                    "name": "Energy Boosting - Beverages"
+                                }, 
+                                {
+                                    "name": "Energy Boosting - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Brain Health and Memory", 
+                            "children": [
+                                {
+                                    "name": "Brain Health and Memory - Beverages"
+                                }, 
+                                {
+                                    "name": "Brain Health and Memory - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Respiratory Health", 
+                            "children": [
+                                {
+                                    "name": "Respiratory Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Respiratory Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Weight Management", 
+                            "children": [
+                                {
+                                    "name": "Weight Management - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Weight Management - Beverages"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Endurance", 
+                            "children": [
+                                {
+                                    "name": "Endurance - Beverages"
+                                }, 
+                                {
+                                    "name": "Endurance - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Immune Support", 
+                            "children": [
+                                {
+                                    "name": "Immune Support - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Immune Support - Beverages"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "General Wellbeing", 
+                            "children": [
+                                {
+                                    "name": "General Wellbeing - Beverages"
+                                }, 
+                                {
+                                    "name": "General Wellbeing - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Food Intolerance", 
+                            "children": [
+                                {
+                                    "name": "Food Intolerance - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Gluten-free Food"
+                                }, 
+                                {
+                                    "name": "Other HW Special Baby Milk Formula"
+                                }, 
+                                {
+                                    "name": "Lactose-free Food"
+                                }, 
+                                {
+                                    "name": "Food Intolerance - Beverages"
+                                }, 
+                                {
+                                    "name": "Diabetic Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Bone and Joint Health", 
+                            "children": [
+                                {
+                                    "name": "Bone and Joint Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Bone and Joint Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Other Prime Positioning", 
+                            "children": [
+                                {
+                                    "name": "Other Prime Positioning - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Other Prime Positioning - Beverages"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Cardiovascular Health", 
+                            "children": [
+                                {
+                                    "name": "Cardiovascular Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Cardiovascular Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Urinary Tract Health", 
+                            "children": [
+                                {
+                                    "name": "Urinary Tract Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Urinary Tract Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Oral Health", 
+                            "children": [
+                                {
+                                    "name": "Oral Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Oral Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Beauty From Within", 
+                            "children": [
+                                {
+                                    "name": "Beauty From Within - Beverages"
+                                }, 
+                                {
+                                    "name": "Beauty From Within - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Digestive Health", 
+                            "children": [
+                                {
+                                    "name": "Digestive Health - Beverages"
+                                }, 
+                                {
+                                    "name": "Digestive Health - Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Vision Health", 
+                            "children": [
+                                {
+                                    "name": "Vision Health - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Vision Health - Beverages"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Oral and Respiratory Health", 
+                            "children": [
+                                {
+                                    "name": "Oral and Respiratory Health - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Oral and Respiratory Health - Beverages"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Health and Wellness by Type", 
+                    "children": [
+                        {
+                            "name": "Better For You (BFY)", 
+                            "children": [
+                                {
+                                    "name": "Better For You Beverages"
+                                }, 
+                                {
+                                    "name": "Better For You Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Naturally Healthy (NH)", 
+                            "children": [
+                                {
+                                    "name": "Naturally Healthy Packaged Food"
+                                }, 
+                                {
+                                    "name": "Naturally Healthy Beverages"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Fortified/Functional (FF)", 
+                            "children": [
+                                {
+                                    "name": "Fortified/Functional Beverages"
+                                }, 
+                                {
+                                    "name": "Fortified/Functional Packaged Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Food Intolerance", 
+                            "children": [
+                                {
+                                    "name": "Food Intolerance - Packaged Food"
+                                }, 
+                                {
+                                    "name": "Gluten-free Food"
+                                }, 
+                                {
+                                    "name": "Other HW Special Baby Milk Formula"
+                                }, 
+                                {
+                                    "name": "Lactose-free Food"
+                                }, 
+                                {
+                                    "name": "Food Intolerance - Beverages"
+                                }, 
+                                {
+                                    "name": "Diabetic Food"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Organic", 
+                            "children": [
+                                {
+                                    "name": "Organic Beverages"
+                                }, 
+                                {
+                                    "name": "Organic Packaged Food"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Health and Wellness by Category", 
+                    "children": [
+                        {
+                            "name": "HW Beverages", 
+                            "children": [
+                                {
+                                    "name": "HW Soft Drinks"
+                                }, 
+                                {
+                                    "name": "HW Hot Drinks"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "HW Packaged Food", 
+                            "children": [
+                                {
+                                    "name": "HW Bakery"
+                                }, 
+                                {
+                                    "name": "HW Ice Cream"
+                                }, 
+                                {
+                                    "name": "HW Spreads"
+                                }, 
+                                {
+                                    "name": "HW Sweet and Savoury Snacks"
+                                }, 
+                                {
+                                    "name": "HW Meal Replacement"
+                                }, 
+                                {
+                                    "name": "HW Noodles"
+                                }, 
+                                {
+                                    "name": "HW Frozen Processed Food Excluding Ready Meals, Pizza, Soup and Noodles"
+                                }, 
+                                {
+                                    "name": "HW Ready Meals"
+                                }, 
+                                {
+                                    "name": "HW Pasta"
+                                }, 
+                                {
+                                    "name": "HW Snack Bars"
+                                }, 
+                                {
+                                    "name": "HW Rice and Dessert Mixes"
+                                }, 
+                                {
+                                    "name": "HW Baby Food"
+                                }, 
+                                {
+                                    "name": "HW Sauces, Dressings and Condiments"
+                                }, 
+                                {
+                                    "name": "HW Oils and Fats"
+                                }, 
+                                {
+                                    "name": "HW Confectionery"
+                                }, 
+                                {
+                                    "name": "HW Soup"
+                                }, 
+                                {
+                                    "name": "HW Chilled Processed Meats, Fish/Seafood and Lunch Kit"
+                                }, 
+                                {
+                                    "name": "HW Dairy"
+                                }, 
+                                {
+                                    "name": "HW Canned/Preserved Food Excluding Ready Meals, Soup and Pasta"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Home Care", 
+            "children": [
+                {
+                    "name": "Home Insecticides"
+                }, 
+                {
+                    "name": "Toilet Care"
+                }, 
+                {
+                    "name": "Polishes"
+                }, 
+                {
+                    "name": "Laundry Care"
+                }, 
+                {
+                    "name": "Dishwashing"
+                }, 
+                {
+                    "name": "Bleach"
+                }, 
+                {
+                    "name": "Air Care"
+                }, 
+                {
+                    "name": "Surface Care"
+                }
+            ]
+        }, 
+        {
+            "name": "Tissue and Hygiene", 
+            "children": [
+                {
+                    "name": "Total Tissue and Hygiene", 
+                    "children": [
+                        {
+                            "name": "Hygiene"
+                        }, 
+                        {
+                            "name": "Tissue"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Away-From-Home Tissue and Hygiene", 
+                    "children": [
+                        {
+                            "name": "Away-From-Home Tissue", 
+                            "children": [
+                                {
+                                    "name": "AFH Paper Tableware"
+                                }, 
+                                {
+                                    "name": "AFH Boxed Facial Tissues"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Away-From-Home Hygiene", 
+                            "children": [
+                                {
+                                    "name": "AFH Incontinence"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Retail Tissue and Hygiene", 
+                    "children": [
+                        {
+                            "name": "Retail Hygiene", 
+                            "children": [
+                                {
+                                    "name": "Wipes"
+                                }, 
+                                {
+                                    "name": "Cotton Wool/Buds/Pads"
+                                }, 
+                                {
+                                    "name": "Incontinence"
+                                }, 
+                                {
+                                    "name": "Nappies/Diapers/Pants"
+                                }, 
+                                {
+                                    "name": "Sanitary Protection"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Retail Tissue", 
+                            "children": [
+                                {
+                                    "name": "Paper Tableware"
+                                }, 
+                                {
+                                    "name": "Tissues"
+                                }, 
+                                {
+                                    "name": "Toilet Paper"
+                                }, 
+                                {
+                                    "name": "Kitchen Towels"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Home and Garden", 
+            "children": [
+                {
+                    "name": "Gardening"
+                }, 
+                {
+                    "name": "Home Improvement"
+                }, 
+                {
+                    "name": "Homewares"
+                }, 
+                {
+                    "name": "Home Furnishings"
+                }
+            ]
+        }, 
+        {
+            "name": "Tobacco", 
+            "children": [
+                {
+                    "name": "Smokeless Tobacco"
+                }, 
+                {
+                    "name": "Cigarettes", 
+                    "children": [
+                        {
+                            "name": "Cigarettes - Illicit Trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Cigars"
+                }, 
+                {
+                    "name": "Smoking Tobacco"
+                }, 
+                {
+                    "name": "Cigarettes Including RYO Stick Equivalent"
+                }
+            ]
+        }, 
+        {
+            "name": "Soft Drinks - Total", 
+            "children": [
+                {
+                    "name": "Asian Speciality Drinks - Total", 
+                    "children": [
+                        {
+                            "name": "Asian Speciality Drinks - Off-trade"
+                        }, 
+                        {
+                            "name": "Asian Speciality Drinks - On-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Soft Drinks - Off-trade"
+                }, 
+                {
+                    "name": "Concentrates - Total", 
+                    "children": [
+                        {
+                            "name": "Concentrates - On-trade"
+                        }, 
+                        {
+                            "name": "Concentrates - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Soft Drinks - On-trade"
+                }, 
+                {
+                    "name": "RTD Coffee - Total", 
+                    "children": [
+                        {
+                            "name": "RTD Coffee - Off-trade"
+                        }, 
+                        {
+                            "name": "RTD Coffee - On-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Fruit/Vegetable Juice - Total", 
+                    "children": [
+                        {
+                            "name": "Fruit/Vegetable Juice - On-trade"
+                        }, 
+                        {
+                            "name": "Fruit/Vegetable Juice - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Bottled Water - Total", 
+                    "children": [
+                        {
+                            "name": "Bottled Water - On-trade"
+                        }, 
+                        {
+                            "name": "Bottled Water - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Sports and Energy Drinks - Total", 
+                    "children": [
+                        {
+                            "name": "Sports and Energy Drinks - Off-trade"
+                        }, 
+                        {
+                            "name": "Sports and Energy Drinks - On-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Carbonates - Total", 
+                    "children": [
+                        {
+                            "name": "Carbonates - Off-trade"
+                        }, 
+                        {
+                            "name": "Carbonates - On-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "RTD Tea - Total", 
+                    "children": [
+                        {
+                            "name": "RTD Tea - Off-trade"
+                        }, 
+                        {
+                            "name": "RTD Tea - On-trade"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Hot Drinks - Total", 
+            "children": [
+                {
+                    "name": "Tea - Total", 
+                    "children": [
+                        {
+                            "name": "Tea - Retail"
+                        }, 
+                        {
+                            "name": "Tea - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Pet Products", 
+                    "children": [
+                        {
+                            "name": "Other Hot Drinks - Retail"
+                        }, 
+                        {
+                            "name": "Other Hot Drinks - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Hot Drinks - Foodservice"
+                }, 
+                {
+                    "name": "Hot Drinks - Retail"
+                }, 
+                {
+                    "name": "Coffee - Total", 
+                    "children": [
+                        {
+                            "name": "Coffee - Foodservice"
+                        }, 
+                        {
+                            "name": "Coffee - Retail"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Other Hot Drinks - Total"
+                }
+            ]
+        }, 
+        {
+            "name": "Personal Accessories", 
+            "children": [
+                {
+                    "name": "Bags and Luggage"
+                }, 
+                {
+                    "name": "Writing Instruments"
+                }, 
+                {
+                    "name": "Jewellery"
+                }, 
+                {
+                    "name": "Watches"
+                }
+            ]
+        }, 
+        {
+            "name": "Luxury Goods", 
+            "children": [
+                {
+                    "name": "Luxury Travel Goods"
+                }, 
+                {
+                    "name": "Luxury Electronic Gadgets", 
+                    "children": [
+                        {
+                            "name": "Luxury Mp3 Players"
+                        }, 
+                        {
+                            "name": "Luxury Mobile Phones"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Luxury Cigars"
+                }, 
+                {
+                    "name": "Luxury Writing Instruments and Stationery"
+                }, 
+                {
+                    "name": "Luxury Jewellery and Timepieces", 
+                    "children": [
+                        {
+                            "name": "Luxury Timepieces", 
+                            "children": [
+                                {
+                                    "name": "Men's Luxury Timepieces"
+                                }, 
+                                {
+                                    "name": "Women's Luxury Timepieces"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Luxury Jewellery", 
+                            "children": [
+                                {
+                                    "name": "Men's Luxury Jewellery"
+                                }, 
+                                {
+                                    "name": "Women's Luxury Jewellery"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Luxury Accessories", 
+                    "children": [
+                        {
+                            "name": "Luxury Small Leather Goods", 
+                            "children": [
+                                {
+                                    "name": "Women's Luxury Small Leather Goods"
+                                }, 
+                                {
+                                    "name": "Men's Luxury Small Leather Goods"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Other Luxury Accessories"
+                        }, 
+                        {
+                            "name": "Luxury Bags", 
+                            "children": [
+                                {
+                                    "name": "Men's Luxury Bags"
+                                }, 
+                                {
+                                    "name": "Women's Luxury Bags"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Luxury Lighters"
+                        }, 
+                        {
+                            "name": "Luxury Costume Jewellery"
+                        }, 
+                        {
+                            "name": "Luxury Cufflinks"
+                        }, 
+                        {
+                            "name": "Luxury Sun Glasses", 
+                            "children": [
+                                {
+                                    "name": "Men's Luxury Sun Glasses"
+                                }, 
+                                {
+                                    "name": "Women's Luxury Sun Glasses"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Designer Apparel (Ready-to-Wear)", 
+                    "children": [
+                        {
+                            "name": "Designer Clothing (Ready-to-Wear)", 
+                            "children": [
+                                {
+                                    "name": "Men's Designer Clothing", 
+                                    "children": [
+                                        {
+                                            "name": "Men's Designer Underwear, Nightwear and Swimwear", 
+                                            "children": [
+                                                {
+                                                    "name": "Men's Designer Nightwear"
+                                                }, 
+                                                {
+                                                    "name": "Men's Designer Swimwear"
+                                                }, 
+                                                {
+                                                    "name": "Men's Designer Underwear"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "name": "Men's Designer Outerwear", 
+                                            "children": [
+                                                {
+                                                    "name": "Men's Designer Jeans"
+                                                }, 
+                                                {
+                                                    "name": "Men's Designer Outerwear (Excl Jeans)", 
+                                                    "children": [
+                                                        {
+                                                            "name": "Men's Designer Tops"
+                                                        }, 
+                                                        {
+                                                            "name": "Men's Designer Shorts and Trousers"
+                                                        }, 
+                                                        {
+                                                            "name": "Men's Designer Jackets and Coats"
+                                                        }, 
+                                                        {
+                                                            "name": "Men's Designer Shirts"
+                                                        }, 
+                                                        {
+                                                            "name": "Men's Designer Suits"
+                                                        }, 
+                                                        {
+                                                            "name": "Other Men's Designer Outerwear"
+                                                        }, 
+                                                        {
+                                                            "name": "Men's Designer Jumpers"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Designer Clothing Accessories", 
+                                    "children": [
+                                        {
+                                            "name": "Designer Ties"
+                                        }, 
+                                        {
+                                            "name": "Designer Hats/Caps"
+                                        }, 
+                                        {
+                                            "name": "Designer Belts"
+                                        }, 
+                                        {
+                                            "name": "Designer Scarves"
+                                        }, 
+                                        {
+                                            "name": "Designer Gloves"
+                                        }, 
+                                        {
+                                            "name": "Other Designer Clothing Accessories"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Women's Designer Clothing", 
+                                    "children": [
+                                        {
+                                            "name": "Women's Designer Outerwear", 
+                                            "children": [
+                                                {
+                                                    "name": "Women's Designer Outerwear (Excl Jeans)", 
+                                                    "children": [
+                                                        {
+                                                            "name": "Women's Designer Shorts and Trousers"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Jumpers"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Suits"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Dresses"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Jackets and Coats"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Shirts and Blouses"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Skirts"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Leggings"
+                                                        }, 
+                                                        {
+                                                            "name": "Other Women's Designer Outerwear"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Tops"
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "Women's Designer Underwear, Nightwear and Swimwear", 
+                                                    "children": [
+                                                        {
+                                                            "name": "Women's Designer Nightwear"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Swimwear"
+                                                        }, 
+                                                        {
+                                                            "name": "Women's Designer Underwear"
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "Women's Designer Jeans"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Designer Hosiery", 
+                                    "children": [
+                                        {
+                                            "name": "Designer Tights"
+                                        }, 
+                                        {
+                                            "name": "Designer Socks"
+                                        }, 
+                                        {
+                                            "name": "Other Designer Hosiery"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Designer Childrenswear", 
+                                    "children": [
+                                        {
+                                            "name": "Boys' Designer Clothing"
+                                        }, 
+                                        {
+                                            "name": "Baby and Toddler Designer Wear"
+                                        }, 
+                                        {
+                                            "name": "Girls' Designer Clothing"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Designer Footwear", 
+                            "children": [
+                                {
+                                    "name": "Women's Designer Footwear"
+                                }, 
+                                {
+                                    "name": "Children's Designer Footwear"
+                                }, 
+                                {
+                                    "name": "Men's Designer Footwear"
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Fine Wines/Champagne and Spirits", 
+                    "children": [
+                        {
+                            "name": "Luxury Spirits", 
+                            "children": [
+                                {
+                                    "name": "Luxury Tequila/Mezcal"
+                                }, 
+                                {
+                                    "name": "Luxury Whiskies", 
+                                    "children": [
+                                        {
+                                            "name": "Luxury Single Malt Scotch Whisky"
+                                        }, 
+                                        {
+                                            "name": "Luxury Bourbon/Other US Whiskey"
+                                        }, 
+                                        {
+                                            "name": "Luxury Blended Scotch Whisky", 
+                                            "children": [
+                                                {
+                                                    "name": "Luxury Malt Scotch Whisky"
+                                                }, 
+                                                {
+                                                    "name": "Luxury Other Blended Scotch Whisky"
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "name": "Luxury Irish Whiskey"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Luxury Rum", 
+                                    "children": [
+                                        {
+                                            "name": "Luxury Dark Rum"
+                                        }, 
+                                        {
+                                            "name": "Luxury White Rum"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Luxury Brandy and Cognac", 
+                                    "children": [
+                                        {
+                                            "name": "Luxury Cognac"
+                                        }, 
+                                        {
+                                            "name": "Luxury Brandy"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Luxury White Spirit", 
+                                    "children": [
+                                        {
+                                            "name": "Luxury English Gin"
+                                        }, 
+                                        {
+                                            "name": "Luxury Vodka"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Luxury Other Spirits"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Fine Wines", 
+                            "children": [
+                                {
+                                    "name": "Fine Champagne"
+                                }, 
+                                {
+                                    "name": "Fine Non-Grape Wine"
+                                }, 
+                                {
+                                    "name": "Fine Still Light Grape Wine", 
+                                    "children": [
+                                        {
+                                            "name": "Fine Still White Wine"
+                                        }, 
+                                        {
+                                            "name": "Fine Still Red Wine"
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Fine Fortified Wine"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Apparel", 
+            "children": [
+                {
+                    "name": "Clothing", 
+                    "children": [
+                        {
+                            "name": "Clothing by Men's vs Women's", 
+                            "children": [
+                                {
+                                    "name": "Women's Clothing"
+                                }, 
+                                {
+                                    "name": "Men's Clothing"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Clothing by Category", 
+                            "children": [
+                                {
+                                    "name": "Underwear, Nightwear and Swimwear"
+                                }, 
+                                {
+                                    "name": "Outerwear"
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Childrenswear"
+                        }, 
+                        {
+                            "name": "Clothing Accessories"
+                        }, 
+                        {
+                            "name": "Hosiery"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Sportswear"
+                }, 
+                {
+                    "name": "Footwear", 
+                    "children": [
+                        {
+                            "name": "Children's Footwear"
+                        }, 
+                        {
+                            "name": "Men's Footwear"
+                        }, 
+                        {
+                            "name": "Women's Footwear"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Consumer Foodservice", 
+            "children": [
+                {
+                    "name": "Consumer Foodservice by Location", 
+                    "children": [
+                        {
+                            "name": "Consumer Foodservice Through Lodging"
+                        }, 
+                        {
+                            "name": "Consumer Foodservice Through Leisure"
+                        }, 
+                        {
+                            "name": "Consumer Foodservice Through Standalone"
+                        }, 
+                        {
+                            "name": "Consumer Foodservice Through Travel"
+                        }, 
+                        {
+                            "name": "Consumer Foodservice Through Retail"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Consumer Foodservice by Type", 
+                    "children": [
+                        {
+                            "name": "100% Home Delivery/Takeaway"
+                        }, 
+                        {
+                            "name": "Full-Service Restaurants"
+                        }, 
+                        {
+                            "name": "Cafes/Bars"
+                        }, 
+                        {
+                            "name": "Pizza Consumer Foodservice"
+                        }, 
+                        {
+                            "name": "Independent Consumer Foodservice"
+                        }, 
+                        {
+                            "name": "Fast Food"
+                        }, 
+                        {
+                            "name": "Chained Consumer Foodservice"
+                        }, 
+                        {
+                            "name": "Street Stalls/Kiosks"
+                        }, 
+                        {
+                            "name": "Self-Service Cafeterias"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Pet Care", 
+            "children": [
+                {
+                    "name": "Store-based Retailing", 
+                    "children": [
+                        {
+                            "name": "Grocery Retailers"
+                        }, 
+                        {
+                            "name": "Non-Grocery Retailers"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Non-Store Retailing", 
+                    "children": [
+                        {
+                            "name": "Homeshopping"
+                        }, 
+                        {
+                            "name": "Direct Selling"
+                        }, 
+                        {
+                            "name": "Internet Retailing"
+                        }, 
+                        {
+                            "name": "Vending"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Pet Food", 
+                    "children": [
+                        {
+                            "name": "Dog and Cat Food"
+                        }, 
+                        {
+                            "name": "Other Pet Food"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Consumer Health", 
+            "children": [
+                {
+                    "name": "OTC", 
+                    "children": [
+                        {
+                            "name": "Dermatologicals"
+                        }, 
+                        {
+                            "name": "Analgesics"
+                        }, 
+                        {
+                            "name": "NRT Smoking Cessation Aids"
+                        }, 
+                        {
+                            "name": "Calming and Sleeping"
+                        }, 
+                        {
+                            "name": "Emergency Contraception"
+                        }, 
+                        {
+                            "name": "Wound Care"
+                        }, 
+                        {
+                            "name": "Eye Care"
+                        }, 
+                        {
+                            "name": "Ear Care"
+                        }, 
+                        {
+                            "name": "Digestive Remedies"
+                        }, 
+                        {
+                            "name": "Adult Mouth Care"
+                        }, 
+                        {
+                            "name": "Cough, Cold and Allergy (Hay Fever) Remedies"
+                        }, 
+                        {
+                            "name": "OTC Triptans"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Allergy Care"
+                }, 
+                {
+                    "name": "Sports Nutrition"
+                }, 
+                {
+                    "name": "Vitamins and Dietary Supplements"
+                }, 
+                {
+                    "name": "Paediatric Consumer Health"
+                }, 
+                {
+                    "name": "Herbal/Traditional Products"
+                }, 
+                {
+                    "name": "Weight Management", 
+                    "children": [
+                        {
+                            "name": "Weight Management - Packaged Food"
+                        }, 
+                        {
+                            "name": "Weight Management - Beverages"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Fresh Food - Total", 
+            "children": [
+                {
+                    "name": "Fish and Seafood - Total", 
+                    "children": [
+                        {
+                            "name": "Fish and Seafood - Foodservice"
+                        }, 
+                        {
+                            "name": "Fish and Seafood - Retail"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Fresh Food - Retail"
+                }, 
+                {
+                    "name": "Vegetables - Total", 
+                    "children": [
+                        {
+                            "name": "Vegetables - Retail"
+                        }, 
+                        {
+                            "name": "Vegetables - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Meat - Total", 
+                    "children": [
+                        {
+                            "name": "Meat - Retail"
+                        }, 
+                        {
+                            "name": "Meat - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Pulses - Total", 
+                    "children": [
+                        {
+                            "name": "Pulses - Retail"
+                        }, 
+                        {
+                            "name": "Pulses - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Fresh Food - Foodservice"
+                }, 
+                {
+                    "name": "Sugar and Sweeteners - Total", 
+                    "children": [
+                        {
+                            "name": "Sugar and Sweeteners - Retail"
+                        }, 
+                        {
+                            "name": "Sugar and Sweeteners - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Eggs - Total", 
+                    "children": [
+                        {
+                            "name": "Eggs - Retail"
+                        }, 
+                        {
+                            "name": "Eggs - Foodservice"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Starchy Roots - Total", 
+                    "children": [
+                        {
+                            "name": "Starchy Roots - Foodservice"
+                        }, 
+                        {
+                            "name": "Starchy Roots - Retail"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Fruits - Total", 
+                    "children": [
+                        {
+                            "name": "Fruits - Foodservice"
+                        }, 
+                        {
+                            "name": "Fruits - Retail"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Nuts - Total", 
+                    "children": [
+                        {
+                            "name": "Nuts - Foodservice"
+                        }, 
+                        {
+                            "name": "Nuts - Retail"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Alcoholic Drinks - Total", 
+            "children": [
+                {
+                    "name": "Wine - Total", 
+                    "children": [
+                        {
+                            "name": "Wine - On-trade"
+                        }, 
+                        {
+                            "name": "Wine - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Spirits - Total", 
+                    "children": [
+                        {
+                            "name": "Spirits - On-trade"
+                        }, 
+                        {
+                            "name": "Spirits - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "RTDs/High-Strength Premixes - Total", 
+                    "children": [
+                        {
+                            "name": "RTDs/High-Strength Premixes - Off-trade"
+                        }, 
+                        {
+                            "name": "RTDs/High-Strength Premixes - On-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Cider/Perry - Total", 
+                    "children": [
+                        {
+                            "name": "Cider/Perry - On-trade"
+                        }, 
+                        {
+                            "name": "Cider/Perry - Off-trade"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Beer - Total", 
+                    "children": [
+                        {
+                            "name": "Beer - On-trade"
+                        }, 
+                        {
+                            "name": "Beer - Off-trade"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Consumer Appliances", 
+            "children": [
+                {
+                    "name": "Major Appliances", 
+                    "children": [
+                        {
+                            "name": "Microwaves"
+                        }, 
+                        {
+                            "name": "Dishwashers"
+                        }, 
+                        {
+                            "name": "Large Cooking Appliances"
+                        }, 
+                        {
+                            "name": "Home Laundry Appliances"
+                        }, 
+                        {
+                            "name": "Refrigeration Appliances"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Small Appliances", 
+                    "children": [
+                        {
+                            "name": "Heating Appliances"
+                        }, 
+                        {
+                            "name": "Irons"
+                        }, 
+                        {
+                            "name": "Food Preparation Appliances"
+                        }, 
+                        {
+                            "name": "Air Treatment Products"
+                        }, 
+                        {
+                            "name": "Small Cooking Appliances"
+                        }, 
+                        {
+                            "name": "Personal Care Appliances"
+                        }, 
+                        {
+                            "name": "Vacuum Cleaners"
+                        }, 
+                        {
+                            "name": "Small Kitchen Appliances (Non-Cooking)"
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "Packaged Food", 
+            "children": [
+                {
+                    "name": "Spreads"
+                }, 
+                {
+                    "name": "Chilled Processed Food"
+                }, 
+                {
+                    "name": "Confectionery", 
+                    "children": [
+                        {
+                            "name": "Chocolate Confectionery"
+                        }, 
+                        {
+                            "name": "Gum"
+                        }, 
+                        {
+                            "name": "Sugar Confectionery"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Soup"
+                }, 
+                {
+                    "name": "Ready Meals"
+                }, 
+                {
+                    "name": "Sweet and Savoury Snacks"
+                }, 
+                {
+                    "name": "Bakery", 
+                    "children": [
+                        {
+                            "name": "Baked Goods"
+                        }, 
+                        {
+                            "name": "Breakfast Cereals"
+                        }, 
+                        {
+                            "name": "Biscuits"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Frozen Processed Food"
+                }, 
+                {
+                    "name": "Baby Food"
+                }, 
+                {
+                    "name": "Canned/Preserved Food"
+                }, 
+                {
+                    "name": "Pasta"
+                }, 
+                {
+                    "name": "Dried Processed Food"
+                }, 
+                {
+                    "name": "Oils and Fats"
+                }, 
+                {
+                    "name": "Snack Bars"
+                }, 
+                {
+                    "name": "Ice Cream"
+                }, 
+                {
+                    "name": "Meal Replacement"
+                }, 
+                {
+                    "name": "Noodles"
+                }, 
+                {
+                    "name": "Dairy", 
+                    "children": [
+                        {
+                            "name": "Baby Milk Formula"
+                        }, 
+                        {
+                            "name": "Cheese"
+                        }, 
+                        {
+                            "name": "Drinking Milk Products"
+                        }, 
+                        {
+                            "name": "Other Dairy"
+                        }, 
+                        {
+                            "name": "Yoghurt and Sour Milk Products"
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Sauces, Dressings and Condiments"
+                }
+            ]
+        }
+    ]
+}

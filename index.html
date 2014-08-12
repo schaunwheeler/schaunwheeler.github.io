@@ -1,0 +1,215 @@
+<html><head><title>Post 3: How to look at a bunch of different things all at the same time</title><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}.c3{widows:2;orphans:2;height:11pt;direction:ltr}.c2{line-height:1.0;widows:2;orphans:2;direction:ltr}.c9{max-width:468pt;background-color:#ffffff;padding:72pt 72pt 72pt 72pt}.c7{widows:2;orphans:2;direction:ltr}.c1{color:#222222;background-color:#ffffff}.c6{color:inherit;text-decoration:inherit}.c5{color:#1155cc;text-decoration:underline}.c8{height:1px;width:33%}.c4{font-weight:bold}.c0{font-size:10pt}.title{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:21pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}.subtitle{widows:2;padding-top:0pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:13pt;font-family:"Trebuchet MS";padding-bottom:10pt;page-break-after:avoid}li{color:#000000;font-size:11pt;font-family:"Arial"}p{color:#000000;font-size:11pt;margin:0;font-family:"Arial"}h1{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:16pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h2{widows:2;padding-top:10pt;line-height:1.15;orphans:2;text-align:left;color:#000000;font-size:13pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h3{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:12pt;font-family:"Trebuchet MS";font-weight:bold;padding-bottom:0pt;page-break-after:avoid}h4{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;text-decoration:underline;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h5{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}h6{widows:2;padding-top:8pt;line-height:1.15;orphans:2;text-align:left;color:#666666;font-style:italic;font-size:11pt;font-family:"Trebuchet MS";padding-bottom:0pt;page-break-after:avoid}</style>
+
+        <link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.5.1.css" type="text/css" />
+        <script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.5.1.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+
+<style>
+.node {
+  cursor: pointer;
+}
+.node circle {
+  fill: #FF4738;
+  stroke: none;
+  stroke-width: 1.5px;
+}
+.node text {
+  font: 11px sans-serif;
+}
+.link {
+  fill: none;
+  stroke: #808080;
+  stroke-width: 1.5px;
+}
+</style>
+
+
+
+
+</head>
+
+
+
+
+<body class="c9"><p class="c7">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <span class="c1 c4">How to look at a lot of different things at the same time</span></p><p class="c3"><span class="c1 c4"></span></p><p class="c7"><span class="c1">In my last two posts, I wrote about some ways we could build a bad model. It&rsquo;s easy to assume we can look at how a market has performed in the past and extrapolate that performance into the future, but that historical trajectory often doesn&rsquo;t contain information about the ways the market can change over the space of even a few years. So we want to build a better model. That means, first and foremost, we need to decide what markets we want to analyze.</span></p><p class="c3"><span class="c1 c4"></span></p><p class="c7"><span class="c1">Euromonitor has over 350 product categories to differentiate markets across countries. These categories are nested.</span><sup class="c1"><a href="#ftnt1" name="ftnt_ref1">[1]</a></sup><span class="c1">&nbsp;Go ahead and explore them with the visualization below: each black dot is a parent category that can be unpacked into subdivisions. When you reach an orange dot you&rsquo;ve reached the last child of a branch.</span></p><p class="c3"><span class="c1"></span></p>
+
+
+    <script>
+
+var margin = {top: 30, right: 120, bottom: 30, left: 150},
+    width = 1100 - margin.right - margin.left,
+    height = 800 - margin.top - margin.bottom;
+
+var i = 0,
+    duration = 750,
+    root;
+
+var tree = d3.layout.tree()
+    .size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+    .projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("emcategories.json", function(error, flare) {
+  root = flare;
+  root.x0 = height / 2;
+  root.y0 = 0;
+
+  function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+
+  root.children.forEach(collapse);
+  update(root);
+});
+
+d3.select(self.frameElement).style("height", "800px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+      links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+      .on("click", click);
+
+  nodeEnter.append("circle")
+      .attr("r", 1e-6)
+      .style("fill", function(d) { return d._children ? "infusiveorange" : "#FF4738"; });
+
+  nodeEnter.append("text")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
+      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .text(function(d) { return d.name; })
+      .style("fill-opacity", 1e-6);
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+      .attr("r", 6.0)
+      .style("fill", function(d) { return d._children ? "infusiveorange" : "#FF4738"; });
+
+  nodeUpdate.select("text")
+      .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+      .duration(duration)
+      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+      .remove();
+
+  nodeExit.select("circle")
+      .attr("r", 1e-6);
+
+  nodeExit.select("text")
+      .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+      .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+      .attr("class", "link")
+      .attr("d", function(d) {
+        var o = {x: source.x0, y: source.y0};
+        return diagonal({source: o, target: o});
+      });
+
+  // Transition links to their new position.
+  link.transition()
+      .duration(duration)
+      .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y};
+        return diagonal({source: o, target: o});
+      })
+      .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+    d.x0 = d.x;
+    d.y0 = d.y;
+  });
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+    d._children = d.children;
+    d.children = null;
+  } else {
+    d.children = d._children;
+    d._children = null;
+  }
+  update(d);
+}
+
+</script>
+
+
+    <p class="c3"><span class="c1"></span></p><p class="c7"><span class="c1">The tree let&rsquo;s me explore which categories are part of which parents, but it&rsquo;s too much information to really digest. Also, Euromonitor&rsquo;s classification doesn&rsquo;t really tell us anything about product category similarities and differences.</span><sup class="c1"><a href="#ftnt2" name="ftnt_ref2">[2]</a></sup><span class="c1">&nbsp;</span><span>So I pruned the tree a little bit: if all of the child categories of any node in the Euromonitor category tree had at least a 0.9 correlation with each other, I removed those child categories and just kept the parent. If not all child categories showed that kind of consistency, I removed the parent categories all the way up to the base of the tree and just kept the children. That left us with 252 product categories, which is still a lot, but at least it&rsquo;s not as redundant.</span></p><p class="c3"><span></span></p><p class="c7"><span>It&rsquo;s difficult to understand how 252 categories relate to one another. The following graph visualizes those relationships as a network cloud. Notice the cloud puckers in many different spots - those are the product categories. We get at least one useful insight from this visualization: notice the cloud looks more dense in some places than in others. A particularly dark area of the cloud runs from the bottom-left to the top-right. That indicates that there are a lot of strongly correlated variables at either end of that diagonal path, and that the variables at one end are have a strong negative correlation with the variables on the other end. So the cloud has some structure that we can potentially use to simplify the picture a little bit.</span></p><p class="c3"><span></span></p>
+
+    <script
+    src="p3_2_product_network_.js"
+    id="e6a6b2b4-1d61-4327-929b-300105168101"
+    async="true"
+    data-bokeh-data="static"
+    data-bokeh-modelid="2791b3ff-c353-4c75-b8a8-b91d750d080d"
+    data-bokeh-modeltype="Plot"
+    ></script>
+
+<p class="c3"><span></span></p><p class="c7"><span>We can get an idea of the underlying structure of the relationships by performing dimensionality reduction.</span><sup><a href="#ftnt3" name="ftnt_ref3">[3]</a></sup><span>&nbsp;That let&rsquo;s us take intercorrelations among 252 variables (that&rsquo;s 31,626 relationships), and reduce those to just the intercorrelations between the 252 variables and a handful of indices that are densely packed with information from the original relationships. Here&rsquo;s what we got:</span></p><p class="c3"><span></span></p><p class="c7"><span>1st index: 83.3%</span></p><p class="c7"><span>2nd index: &nbsp;8.9%</span></p><p class="c7"><span>3rd index: &nbsp;3.7%</span></p><p class="c7"><span>4th index: &nbsp;0.9%</span></p><p class="c7"><span>5th index: &nbsp;0.8%</span></p><p class="c3"><span></span></p><p class="c7"><span>The percentages are how much of the total space within that network cloud we were able to characterize with our indices.</span><sup><a href="#ftnt4" name="ftnt_ref4">[4]</a></sup><span>&nbsp;The first index characterizes the majority of the relationships in the network - it corresponds to that dark diagonal area that we saw in the network cloud. You can see how well the index makes sense of the relationships by looking at a heatmap of all correlations among all 252 product categories, ordered by that first index. You can zoom in to see specifics, but in general the darker the orange area, the stronger the positive correlation between categories; the darker the grey area, the stronger the negative correlation between categories.</span></p><p class="c3"><span></span></p>
+
+<script
+    src="p3_3_product_heatmap_.js"
+    id="de7a6f1e-a1c9-4136-a706-87b984e5261c"
+    async="true"
+    data-bokeh-data="static"
+    data-bokeh-modelid="0ac0b38a-ced9-4e0c-8b1b-23075fb1213d"
+    data-bokeh-modeltype="Plot"
+    ></script>
+
+<p class="c3"><span></span></p><p class="c7"><span>So n</span><span>ow </span><span>we have a tool for vastly simplifying the complicated network or product intercorrelations. The first two indices together capture over 92% of all the information from the network cloud, and using only two indices allows us to lay out the product categories as if they were on a map, below. &nbsp;The first (most informative) index runs from west to east, and the second index runs from north to south. </span></p><p class="c3"><span></span></p>
+
+<script
+    src="p3_4_product_map_.js"
+    id="3f1fb30b-44ca-49ce-9517-5923381f8141"
+    async="true"
+    data-bokeh-data="static"
+    data-bokeh-modelid="8dde614c-47d9-40a9-8f8e-66461748505c"
+    data-bokeh-modeltype="Plot"
+></script>
+
+<p class="c3"><span></span></p><p class="c7"><span>I&rsquo;ve labelled each of the points with numbers using an affinity propagation algorithm.</span><sup><a href="#ftnt5" name="ftnt_ref5">[5]</a></sup><span>&nbsp;That allows us to simplify things in a different way: it gives us 15 clusters, in each of which product categories are more similar to each other than they are to categories in other clusters. If the indices form a map the clusters tell us where the towns are on that map.</span><sup><a href="#ftnt6" name="ftnt_ref6">[6]</a></sup><span>&nbsp;By characterizing each product category in relation to a couple indices, rather than to all of the other product categories at once, we&rsquo;ve reduced (252 categories x 251 other categories) / 2 = 31,626 relationships to (252 categories x 2 indices) = 504 relationships, and then we&rsquo;ve be able to use the map based on those indices to further reduce things to 15 clusters. That&rsquo;s manageable.</span></p><hr class="c8"><div><p class="c2"><a href="#ftnt_ref1" name="ftnt1">[1]</a><span class="c0">&nbsp;</span><span class="c1 c0">&#39;Chocolate Confectionery&#39;, &#39;Gum&#39;, and &lsquo;&#39;Sugar Confectionery&#39;, for example, are all part of the &lsquo;Confectionary&rsquo; parent category, which, along with &lsquo;Baby Food&rsquo;, &lsquo;Bakery&rsquo;, &lsquo;Canned/Preserved Food&rsquo;, and others make up the &lsquo;Packaged Food&rsquo; top-level category. Some of Euromonitor&rsquo;s top-level categories contain up to six layers of subdivisions.</span></p></div><div><p class="c2"><a href="#ftnt_ref2" name="ftnt2">[2]</a><span class="c0">&nbsp;</span><span class="c1 c0">Do we really need to analyze Women&rsquo;s Designer Tops, Women&rsquo;s Designer Shirts and Blouses, Women&rsquo;s Designer Shorts and Skirts, and Women&rsquo;s Designer Dresses, and then also analyze them all in aggregate as Women&rsquo;s Designer Clothing?. If all of those categories show very similar patterns in consumption across countries and years, it may make sense to only analyze the parent category. If the consumption patterns differ, then it makes sense to analyze all the child categories separately.</span></p></div><div><p class="c2"><a href="#ftnt_ref3" name="ftnt3">[3]</a><span class="c0">&nbsp;Dimensionality takes a high-dimensional space (in our case, 252 product categories) and takes advantage of those dimension&rsquo;s intercorrelation to create a handful of indices that characterize a large portion of those relationships. I used Principal Components Analysis (PCA). It&rsquo;s easy to find explanations of PCA on the web (non-technical: </span><span class="c5 c0"><a class="c6" href="https://www.youtube.com/watch?v=BfTMmoDFXyE">https://www.youtube.com/watch?v=BfTMmoDFXyE</a></span><span class="c0">; kind of technical: </span><span class="c0 c5"><a class="c6" href="http://www.google.com/url?q=http%3A%2F%2Fgeorgemdallas.wordpress.com%2F2013%2F10%2F30%2Fprincipal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHZeZLjUKsyJ6uMeNC64zJ14Iiikw">http://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/</a></span><span class="c0">, more technical: http://www.cs.princeton.edu/picasso/mats/PCA-Tutorial-Intuition_jp.pdf).</span><span class="c0">&nbsp;Here&rsquo;s by PCA elevator speech: take the cloud of relationships we visualized above; figure out what one straight line you can draw through that cloud that covers the most distance - call that your first principal component; now draw a second straight line that covers the second most distance and is a uncorrelated as possible with the first principal component - call that your second principal component; keep drawing lines until you&rsquo;ve reproduced the entire cloud with your new lines (you&rsquo;ll typically have as many new lines as you have variables).</span></p></div><div><p class="c2"><a href="#ftnt_ref4" name="ftnt4">[4]</a><span class="c0">&nbsp;I cut off the list at the 5th component because of how many variables we had. If we had 252 indices we&rsquo;d characterize 100% of the network, because then we&rsquo;d just have an index for each product category. If none of the categories were correlated at all then each index would explain the same amount of the total picture: 100% / 252 categories &asymp; 0.4%. So any index that explains less than 0.4% of the total picture is probably less informative than just making separate indices for each variable.</span></p></div><div><p class="c2"><a href="#ftnt_ref5" name="ftnt5">[5]</a><span class="c0">&nbsp;Affinity propagation is currently my favorite way to cluster variables. You can read more about it here: </span><span class="c5 c0"><a class="c6" href="http://www.google.com/url?q=http%3A%2F%2Fwww.psi.toronto.edu%2Faffinitypropagation%2Ffaq.html&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFQhcWBLAieaFwPli6vI2I3KicedQ">http://www.psi.toronto.edu/affinitypropagation/faq.html</a></span><span class="c0">. It identifies &ldquo;exemplars&rdquo; in the data and then assigns all other data points to a cluster based on how similar they are to that cluster&rsquo;s exemplar and how dissimilar they are to the other exemplars.</span></p></div><div><p class="c2"><a href="#ftnt_ref6" name="ftnt6">[6]</a><span class="c0">&nbsp;I&rsquo;ll go into the question of which categories fit into which clusters in a later post.</span></p></div></body></html>
