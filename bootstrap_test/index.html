@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +12,15 @@
 
 <script type="text/javascript">
 function get_plot(plotid, folder) {
-    s = document.getElementsByName("plotholder")[0]
-    s.src = folder.concat(plotid).concat(".js");
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = folder.concat("/").concat(plotid).concat(".js");
     s.id=plotid;
+    s.async="true";
+    s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
-    eval(s);
+    s.setAttribute("data-bokeh-modeltype", "Plot");
+    document.body.appendChild(s);
 }
 </script>
 
@@ -30,17 +33,12 @@ body {
 </head>
 <body>
 
-<script
-    name="plotholder"
-    src="js/p1_1_em_estimates_preds_test_2014.js"
-    id="p1_1_em_estimates_preds_test_2014"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2014"
-    data-bokeh-modeltype="Plot"
-></script>
+<div id="p1_1_em_estimates_preds_test_2014"></div>
+<div id="p1_1_em_estimates_preds_test_2015"></div>
+<div id="p1_1_em_estimates_preds_test_2016"></div>
+<div id="p1_1_em_estimates_preds_test_2017"></div>
 
-<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">Try This</button>
+<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js')">Try This</button>
 
 </body>
 </html>
