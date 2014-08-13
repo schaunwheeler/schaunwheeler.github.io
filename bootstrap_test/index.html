@@ -29,7 +29,7 @@ function get_plot(plotid, folder) {
     }
 }
 
-$("button").click(function(){
+$("label").click(function(){
     $(this).addClass("active").siblings().removeClass("active");
 });
 
@@ -46,12 +46,19 @@ body {
 
 <div class="container-fluid">
 <div class="btn-group" data-toggle="buttons">
-<button class="btn btn-default active" id="first" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</button>
-<button class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">2014</button>
-<button class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">2015</button>
-<button class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">2016</button>
-<button class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2017','js/')">2017</button>
-<button class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2018','js/')">2018</button>
+
+<label class="btn btn-default active" id="first" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">
+    <input type="radio" checked>2013</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">
+    <input type="radio">2014</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">
+    <input type="radio">2015</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">
+    <input type="radio">2016</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2017','js/')">
+    <input type="radio">2017</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2018','js/')">
+    <input type="radio">2018</label>
 </div>
 <div name='plotholder'></div>
 </div>
