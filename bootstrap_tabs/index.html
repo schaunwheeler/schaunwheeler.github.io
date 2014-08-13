@@ -1,108 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.5.1.css" type="text/css" />
 
-        <!DOCTYPE html>
-        <html>
-        <head>
-        
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.5.1.css" type="text/css" />
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.5.1.js"></script>
-        
-        <script type="text/javascript">
-        $(window).load(function(){
-        $('input[type=radio]').on('change', function () {
-            if (!this.checked) return
-                $('.collapse').not($('div.' + $(this).attr('class'))).slideUp(0);
-                $('.collapse.' + $(this).attr('class')).slideDown(0);
-        });
-        });
-        
-        $('label').click( function() {
-            $(this).addClass('active').siblings().removeClass('active');
-        });        
-        </script>
-        
-        <style type="text/css">        
-        body {
-             margin: 10px;
-        }
-        .collapse {
-            display: none;
-        }
-        .collapse.div2013 {
-            display: block;
-        }
-        </style>
-        </head>
-<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.5.1.js"></script>
+
+<script type="text/javascript">
+function get_plot(plotid, folder) {
+    var s = document.createElement("script");
+    s.type = "text/javascript";
+    s.src = folder.concat(plotid).concat(".js");
+    s.id=plotid;
+    s.async="true";
+    s.setAttribute("data-bokeh-data", "static");
+    s.setAttribute("data-bokeh-modelid", plotid);
+    s.setAttribute("data-bokeh-modeltype", "Plot");
+    elem = document.getElementsByName("plotholder")[0];
+    if (elem.children.length==0) {
+        elem.appendChild(s)
+    } else {
+        old_child = elem.children[0]
+        elem.replaceChild(s, old_child);
+    }
+}
+
+$("label").click(function(){
+    $(this).addClass("active").siblings().removeClass("active");
+});
+
+</script>
+
+<style type="text/css">        
+body {
+     margin: 10px;
+}
+</style>
+
+</head>
+<body onload="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">
+
 <div class="container-fluid">
 <div class="btn-group" data-toggle="buttons">
-<label class="btn btn-default active">
-<input type="radio" class="div2013" name="when" value="div2013" checked>2013</label>
-<label class="btn btn-default">
-<input type="radio" class="div2014" name="when" value="div2014">2014</label>
-<label class="btn btn-default">
-<input type="radio" class="div2015" name="when" value="div2015">2015</label>
-<label class="btn btn-default">
-<input type="radio" class="div2016" name="when" value="div2016">2016</label>
-<label class="btn btn-default">
-<input type="radio" class="div2017" name="when" value="div2017">2017</label>
-<label class="btn btn-default">
-<input type="radio" class="div2018" name="when" value="div2018">2018</label>
+
+<label class="btn btn-default active" id="first" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">
+    <input type="radio" checked>2013</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">
+    <input type="radio">2014</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">
+    <input type="radio">2015</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">
+    <input type="radio">2016</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2017','js/')">
+    <input type="radio">2017</label>
+<label class="btn btn-default" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2018','js/')">
+    <input type="radio">2018</label>
 </div>
-<div>
-<div class="collapse div2013"><script
-    src="js/p1_1_em_estimates_preds_test_2013.js"
-    id="p1_1_em_estimates_preds_test_2013"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2013"
-    data-bokeh-modeltype="Plot"
-></script></div>
-<div class="collapse div2014"><script
-    src="js/p1_1_em_estimates_preds_test_2014.js"
-    id="p1_1_em_estimates_preds_test_2014"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2014"
-    data-bokeh-modeltype="Plot"
-></script></div>
-<div class="collapse div2015"><script
-    src="js/p1_1_em_estimates_preds_test_2015.js"
-    id="p1_1_em_estimates_preds_test_2015"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2015"
-    data-bokeh-modeltype="Plot"
-></script></div>
-<div class="collapse div2016"><script
-    src="js/p1_1_em_estimates_preds_test_2016.js"
-    id="p1_1_em_estimates_preds_test_2016"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2016"
-    data-bokeh-modeltype="Plot"
-></script></div>
-<div class="collapse div2017"><script
-    src="js/p1_1_em_estimates_preds_test_2017.js"
-    id="p1_1_em_estimates_preds_test_2017"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2017"
-    data-bokeh-modeltype="Plot"
-></script></div>
-<div class="collapse div2018"><script
-    src="js/p1_1_em_estimates_preds_test_2018.js"
-    id="p1_1_em_estimates_preds_test_2018"
-    async="true"
-    data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2018"
-    data-bokeh-modeltype="Plot"
-></script></div>
+<div name='plotholder'></div>
 </div>
-</div>
+
+
 </body>
 </html>
