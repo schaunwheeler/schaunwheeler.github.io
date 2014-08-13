@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
 function get_plot(plotid, folder) {
-    s = document.getElementsByName("plotholder")
+    s = document.getElementsByName("plotholder")[0]
     s.src = folder.concat(plotid).concat(".js");
     s.id=plotid;
     s.setAttribute("data-bokeh-modelid", plotid);
