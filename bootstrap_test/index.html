@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.5.1.css" type="text/css" />
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.5.1.js"></script>
 
@@ -28,39 +29,17 @@ body {
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="tabbable tabs-above">
-    <ul class="nav nav-tabs" id="tabset">
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')" data-toggle="tab">2013</a>
-      </li>
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')" data-toggle="tab">2014</a>
-      </li>
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')" data-toggle="tab">2015</a>
-      </li>
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')" data-toggle="tab">2016</a>
-      </li>
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2017','js/')" data-toggle="tab">2017</a>
-      </li>
-      <li class="active">
-        <a onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2018','js/')" data-toggle="tab">2018</a>
-      </li>
-    </ul>
-
 <script
     name="plotholder"
-    src="js/p1_1_em_estimates_preds_test_2013.js"
-    id="p1_1_em_estimates_preds_test_2013"
+    src="js/p1_1_em_estimates_preds_test_2014.js"
+    id="p1_1_em_estimates_preds_test_2014"
     async="true"
     data-bokeh-data="static"
-    data-bokeh-modelid="p1_1_em_estimates_preds_test_2013"
+    data-bokeh-modelid="p1_1_em_estimates_preds_test_2014"
     data-bokeh-modeltype="Plot"
 ></script>
 
+<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">Try This</button>
 
 </body>
 </html>
