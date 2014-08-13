@@ -14,7 +14,7 @@
 <script type="text/javascript">
 function change_plot()
 {
-document.getElementById('anchor').innerHTML="W3Schools";
+document.getElementById('anchor').src = folder.concat("/").concat(plotid).concat(".js");
 document.getElementById('anchor').href="http://www.w3schools.com";
 document.getElementById('anchor').target="_blank";
 }
@@ -31,7 +31,7 @@ body {
 
 <script
     src="js/p1_1_em_estimates_preds_test_2013.js"
-    id="p1_1_em_estimates_preds_test_2013"
+    id="anchor"
     async="true"
     data-bokeh-data="static"
     data-bokeh-modelid="p1_1_em_estimates_preds_test_2013"
