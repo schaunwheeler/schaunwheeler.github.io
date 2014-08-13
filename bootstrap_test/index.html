@@ -14,7 +14,6 @@
 <script type="text/javascript">
 function get_plot(plotid, folder) {
     var s = document.createElement("script");
-    var newdiv = document.createElement('div');
     s.type = "text/javascript";
     s.src = folder.concat("/").concat(plotid).concat(".js");
     s.id=plotid;
@@ -22,8 +21,7 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
-    newdiv.innerHTML = s;
-    document.getElementById(plotid).appendChild(newdiv);
+    document.getElementById(plotid).innerHTML = s;
 }
 </script>
 
