@@ -17,6 +17,7 @@ function get_plot(plotid, folder) {
     s.src = folder.concat(plotid).concat(".js");
     s.id=plotid;
     s.setAttribute("data-bokeh-modelid", plotid);
+    eval(s);
 }
 </script>
 
