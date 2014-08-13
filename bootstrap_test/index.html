@@ -21,9 +21,17 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
     elem = document.getElementsByName("plotholder")[0];
-    old_child = elem.children[0]
-    elem.replaceChild(s, old_child);
+    if (elem.children.length==0) {
+        elem.appendChild(s)
+    } else {
+        old_child = elem.children[0]
+        elem.replaceChild(s, old_child);
+    }
 }
+function click_button(bid) {
+    document.getElementById(bid).click();
+}
+
 </script>
 
 <style type="text/css">        
@@ -33,9 +41,9 @@ body {
 </style>
 
 </head>
-<body>
+<body onload="clickButton('first')">
 
-<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</button>
+<button id="first" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</button>
 <button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">2014</button>
 <button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">2015</button>
 <button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">2016</button>
