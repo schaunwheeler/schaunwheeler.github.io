@@ -21,7 +21,7 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
-    $("body").append(s);
+    document.getElementById(plotid).innerHTML = s;
 }
 </script>
 
@@ -39,7 +39,7 @@ body {
 <div id="p1_1_em_estimates_preds_test_2016"></div>
 <div id="p1_1_em_estimates_preds_test_2017"></div>
 
-<a href="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js')">Try This</a>
+<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js')">Try This</button>
 
 </body>
 </html>
