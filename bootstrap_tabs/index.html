@@ -29,7 +29,7 @@ function get_plot(plotid, folder) {
     }
 }
 
-$("label").click(function(){
+$("li").click(function(){
     $(this).addClass("active").siblings().removeClass("active");
 });
 
@@ -46,7 +46,7 @@ body {
 
 <div class="container-fluid">
 <ul class="nav nav-tabs" id="friends">
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</a></li>
+    <li class='active'><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</a></li>
     <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">2014</a></li>
     <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">2015</a></li>
     <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">2016</a></li>
