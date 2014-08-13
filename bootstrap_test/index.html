@@ -13,17 +13,10 @@
 
 <script type="text/javascript">
 function get_plot(plotid, folder) {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = folder.concat("/").concat(plotid).concat(".js");
+    s = document.getElementsByName("plotholder")
+    s.src = folder.concat(plotid).concat(".js");
     s.id=plotid;
-    s.async="true";
-    s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
-    s.setAttribute("data-bokeh-modeltype", "Plot");
-    loc = document.getElementById(plotid)
-    loc.innerHTML = s;
-    eval(loc.innerHTML)
 }
 </script>
 
@@ -36,12 +29,17 @@ body {
 </head>
 <body>
 
-<div id="p1_1_em_estimates_preds_test_2014"></div>
-<div id="p1_1_em_estimates_preds_test_2015"></div>
-<div id="p1_1_em_estimates_preds_test_2016"></div>
-<div id="p1_1_em_estimates_preds_test_2017"></div>
+<script
+    name="plotholder"
+    src="js/p1_1_em_estimates_preds_test_2014.js"
+    id="p1_1_em_estimates_preds_test_2014"
+    async="true"
+    data-bokeh-data="static"
+    data-bokeh-modelid="p1_1_em_estimates_preds_test_2014"
+    data-bokeh-modeltype="Plot"
+></script>
 
-<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js')">Try This</button>
+<button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">Try This</button>
 
 </body>
 </html>
