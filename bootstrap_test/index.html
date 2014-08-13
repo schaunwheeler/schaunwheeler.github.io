@@ -21,7 +21,9 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
-    document.getElementById(plotid).innerHTML = s;
+    loc = document.getElementById(plotid)
+    loc.innerHTML = s;
+    eval(loc.innerHTML)
 }
 </script>
 
