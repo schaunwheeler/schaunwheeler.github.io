@@ -20,7 +20,8 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
-    return document.getElementsByName("plotholder")[0]
+    document.getElementsByName("plotholder")[0]
+    return plotid
     //.appendChild(plotid);
 }
 </script>
