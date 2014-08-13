@@ -28,9 +28,6 @@ function get_plot(plotid, folder) {
         elem.replaceChild(s, old_child);
     }
 }
-function click_button(bid) {
-    document.getElementById(bid).click();
-}
 
 </script>
 
@@ -41,7 +38,7 @@ body {
 </style>
 
 </head>
-<body onload="clickButton('first')">
+<body onload="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">
 
 <button id="first" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</button>
 <button onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">2014</button>
