@@ -56,7 +56,7 @@ function switch_data(tableid, folder, callback) {
 }
 
 get_table = function (table_data, table_columns) {
-    
+
     if (jQuery.fn.dataTable.fnIsDataTable($('#dataframe')[0])) {
         table_element.fnClearTable();
         table_element.fnAddData(table_data);
@@ -103,7 +103,7 @@ window.onload = function(){
     var tableanchors = document.getElementsByClassName('clicker table');
     var firstname = plotanchors[0].getAttribute('name');
     var firstfolder = plotanchors[0].getAttribute('id');
-    
+
     if(tableanchors.length>0){
         get_plot(firstname, firstfolder, function(){
             switch_data(firstname, firstfolder, function(){
@@ -111,7 +111,7 @@ window.onload = function(){
                 initial_sizing(0.9);
             });
         });
-        
+
         var click_handler = function() {
             var filename = this.getAttribute('name');
             var foldername = this.getAttribute('id');
@@ -130,7 +130,7 @@ window.onload = function(){
             get_plot(filename, foldername, function(){console.log('No table')});
         }
     }
-    
+
     for(var i=0; i<plotanchors.length; i++){
         plotanchors[i].onclick = click_handler
     }
@@ -160,6 +160,38 @@ body {
 TD {
     font-size: 10px;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color:white !important;
+    border-radius: 3px !important;
+    border:0px solid #cacaca;
+    background-color:#A8A8A8;
+    background:#A8A8A8;
+    }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color:white !important;
+    border-radius: 3px !important;
+    border:0px solid #cacaca;
+    background-color:#C6C6C6;
+    background:#C6C6C6;
+    }
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color:white !important;
+    border-radius: 3px !important;
+    border:0px solid #cacaca;
+    background-color:#C6C6C6;
+    background:#C6C6C6;
+    }
+
+.bk-toolbar-button:focus,
+.bk-toolbar-button:active:focus,
+.bk-toolbar-button.bk-bs-active:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
 }
 
 .bk-logo-medium {
