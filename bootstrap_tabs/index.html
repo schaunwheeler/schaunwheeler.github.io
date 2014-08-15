@@ -1,16 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-        
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.5.1.css" type="text/css" />
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.5.1.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript">
-function get_plot(plotid, folder) {
+
+function get_plot(plotid, folder, callback) {
     var s = document.createElement("script");
     s.type = "text/javascript";
     s.src = folder.concat(plotid).concat(".js");
@@ -19,52 +24,224 @@ function get_plot(plotid, folder) {
     s.setAttribute("data-bokeh-data", "static");
     s.setAttribute("data-bokeh-modelid", plotid);
     s.setAttribute("data-bokeh-modeltype", "Plot");
-    elem = document.getElementsByName("plotholder")[0];
+    s.onreadystatechange = s.onload = function() {
+        var state = s.readyState;
+        if (!callback.done && (!state || /loaded|complete/.test(state))) {
+            callback.done = true;
+            console.log('Done waiting')
+            callback();
+        }
+    };
+    var elem = document.getElementById("plotholder");
     if (elem.children.length==0) {
         elem.appendChild(s)
     } else {
-        old_child = elem.children[0]
+        var old_child = elem.children[0]
         elem.replaceChild(s, old_child);
     }
 }
 
+function switch_data(tableid, folder, callback) {
+    var s = document.createElement('script');
+    s.src = folder.concat(tableid).concat("_table.js");
+    s.async = true;
+    s.onreadystatechange = s.onload = function() {
+        var state = s.readyState;
+        if (!callback.done && (!state || /loaded|complete/.test(state))) {
+            callback.done = true;
+            callback();
+        }
+    };
+    document.getElementsByTagName('head')[0].appendChild(s);
+}
+
+get_table = function (table_data, table_columns) {
+    
+    if (jQuery.fn.dataTable.fnIsDataTable($('#dataframe')[0])) {
+        table_element.fnClearTable();
+        table_element.fnAddData(table_data);
+    } else {
+        var table = document.getElementById("dataframe");
+        var header = table.createTHead();
+        var tr = document.createElement('TR');
+        header.appendChild(tr);
+        for (i = 0; i < table_columns.length; i++) {
+            var th = document.createElement('TH')
+            th.appendChild(document.createTextNode(table_columns[i]['mData']));
+            tr.appendChild(th);
+        }
+       table_element = jQuery('#dataframe').dataTable( {
+                    "bDestroy": true,
+                    "aaData": table_data,
+                    "aoColumns": table_columns,
+                    "iDisplayLength": 20,
+                    "aLengthMenu": [[5, 10, 20, 50], [5, 10, 20, 50]]
+            });
+    }
+}
+
+function initial_sizing(fraction) {
+    $(".bk-logo")[0].setAttribute("href", "http://www.infusiveintelligence.com/")
+    var scaling_factor = 0.55
+    var window_width = $(window).width()
+    $(".bokeh.plotview").width(Math.round($(".bokeh.plotview").width() * fraction));
+    var plot_width = $(".bokeh.plotview").width();
+    var plot_height = $(".bokeh.plotview").height();
+    var height_ratio = plot_height/plot_width
+    //$("#plotholder").width(Math.round(window_width*scaling_factor));
+    //$("#plotholder").height(Math.round(window_width*scaling_factor*height_ratio));
+    //$("#tableholder").width(Math.round(window_width*(0.95-scaling_factor)));
+    $("#tableholder").width(Math.round(window_width-(1.05*plot_width)));
+    $("#tableholder").height(plot_height);
+}
 
 </script>
 
-<style type="text/css">        
+<script type="text/javascript" >
+window.onload = function(){
+    var plotanchors = document.getElementsByClassName('clicker plot');
+    var tableanchors = document.getElementsByClassName('clicker table');
+    var firstname = plotanchors[0].getAttribute('name');
+    var firstfolder = plotanchors[0].getAttribute('id');
+    
+    if(tableanchors.length>0){
+        get_plot(firstname, firstfolder, function(){
+            switch_data(firstname, firstfolder, function(){
+                get_table(table_data, table_columns);
+                initial_sizing(0.9);
+            });
+        });
+        
+        var click_handler = function() {
+            var filename = this.getAttribute('name');
+            var foldername = this.getAttribute('id');
+                get_plot(filename, foldername, function(){
+                switch_data(filename, foldername, function(){
+                    get_table(table_data, table_columns);
+                    initial_sizing(0.9);
+                });
+            });
+        }
+    } else {
+        get_plot(firstname, firstfolder);
+        var click_handler = function() {
+            var filename = this.getAttribute('name');
+            var foldername = this.getAttribute('id');
+            get_plot(filename, foldername, function(){console.log('No table')});
+        }
+    }
+    
+    for(var i=0; i<plotanchors.length; i++){
+        plotanchors[i].onclick = click_handler
+    }
+}
+
+$(window).resize(function(){
+        initial_sizing(1.0);
+    });
+
+</script>
+
+<style type="text/css">
 body {
      margin: 10px;
+     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 .nav-tabs > li > a,
 .nav-tabs > li > a:hover,
-.nav-tabs > li > a:focus{
-    color: #808080;  
-} 
+.nav-tabs > li > a:focus {
+    color: #808080;
+}
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus{
-    color: #FF4738;  
-} 
+.nav-tabs > li.active > a:focus {
+    color: #FF4738;
+}
+TD {
+    font-size: 10px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
 
+.bk-logo-medium {
+  width: 35px;
+  height: 35px;
+  background-image: url(data:image/png;base64,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);
+}
+.bk-sidebar {
+  float: left;
+  left: -5%;
+  transform: translateY(50%)
+}
+
+.bk-button-bar > .bk-toolbar-button {
+  width: 40px;
+  height: 40px;
+}
+
+.bk-toolbar-button > .bk-btn-icon {
+  width: 28px;
+  height: 28px;
+  float: left;
+  left: -25%;
+  transform: translateY(0%);
+}
+
+.bk-toolbar-button > span.tip {
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+.bk-toolbar-button:hover > span.tip {
+  left: 40px;
+  font-size: 100%;
+}
+
+.bokeh_tooltip.left::before {
+  border-color: transparent #808080 transparent transparent;
+  }
+.bokeh_tooltip.right::after {
+  border-color: transparent transparent transparent #808080;
+ }
+.bokeh_tooltip {
+  padding: 10px;
+  background-color: #808080;
+  border-radius: 20px;
+}
+.bokeh_tooltip_row_label {
+  color: black;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+.bokeh_tooltip_row_value {
+  color: white;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  padding-left: 5%;
+}
 </style>
 
 </head>
-<body onload="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">
-
+<body>
 <div class="container-fluid">
-<ul class="nav nav-tabs" id="friends">
-    <li class='active'><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2013','js/')">2013</a></li>
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2014','js/')">2014</a></li>
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2015','js/')">2015</a></li>
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2016','js/')">2016</a></li>
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2017','js/')">2017</a></li>
-    <li><a data-toggle="tab" onclick="javascript:get_plot('p1_1_em_estimates_preds_test_2018','js/')">2018</a></li>
+<ul class="nav nav-tabs nav-justified" id="tabbar">
+<li class='active'><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2013" id="js/">2013</a></li>
+<li><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2014" id="js/">2014</a></li>
+<li><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2015" id="js/">2015</a></li>
+<li><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2016" id="js/">2016</a></li>
+<li><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2017" id="js/">2017</a></li>
+<li><a data-toggle="tab" class="clicker plot table" name="p1_1_em_estimates_preds_2018" id="js/">2018</a></li>
 </ul>
 </div>
 <br>
-<div name='plotholder'></div>
+<div id="container">
+<div id="plotholder" style="float:left;">
 </div>
-
+<div id="tableholder" style="float:left;overflow:scroll;">
+<table class="display compact" id="dataframe"></table>
+</div>
+<div style="height:0;line-height:0;display:block;clear:both;"></div></div>
+<div id="footer" style="clear:both;width=:100%; color: #808080;"><hr><p>Infusive internal use only.</p></div>
 
 </body>
 </html>
