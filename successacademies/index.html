@@ -57,7 +57,7 @@
       </div>
       <div class="row">
             <div class="col-md-8">
-                    <h4><strong>The results of this analysis index each scholar in Middle School 1 in terms of highest potential for improvement. Using the index to allocate school/teacher resources will focus your efforts on helping those scholars who are mostly likely to respond with higher performance. </strong></h4>
+                    <h4><strong>This analysis indexes scholars' potential for improvement. Focus your efforts first on those scholars with the lowest index value. Those scholars are mostly likely to respond with higher performance. Don't devote extra attention to scholars with high index values unless lower-indexed scholars' needs have already been addressed.</strong></h4>
                     <br>
             </div>
         </div>
@@ -105,6 +105,8 @@
                     <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Built predictive model to score each predictor in terms of its informativeness in predicting summative assessment performance</p>
                       <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Unsurprisingly, math-related predictors tended to be most informative, but several others had enough value to retain them</p>
                       <p><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Methods note: training the model on all students over multiple years limited the chance of idiosyncracies being mistaken for reliable predictors</p>
+                      <br>
+                      <p><em>The following graph shows a high-level view of which indicators were most useful in predicting performance on the summative assessment.  Each indicator has multiple values because indicators are repeated over the school year (multiple quizzes, multiple weeks of attendance measures, etc.) The colors show which indicators were in the top percentile of predictive power, which were in the next decile,  and then the next two deciles, and then all the rest. You can see that some indicators had a single most important exemplar while other indicators were predictive when taken all together. Also note that while most informative indicators came, unsurprisingly, from the math category, some other academic and cultural variables were important as well.</em></p>
                 </div>
               </div>
       <div class="row">
@@ -148,7 +150,7 @@
       <div id="myTabContent" class="tab-content">
       <div id="network" class="tab-pane fade in active">
             <br>
-            <p>This graph visualizes scholar similarities as a network cloud. It puckers in many different spots - those are individual scholars. Notice the cloud looks more dense in some places: a particularly dark area runs from the bottom-left to the top-right. That indicates that there is some  structure to student similarities that can be mined for insights.</p>
+            <p><em>This graph visualizes scholar similarities as a network cloud. It puckers in many different spots - those are individual scholars. Notice the cloud looks more dense in some places: a particularly dark area runs from the bottom-left to the top-right. That indicates that there is some  structure to student similarities that can be mined for insights.</em></p>
             <script
                           src="js/network_0.js"
                           id="network_0"
@@ -160,7 +162,7 @@
       </div>
       <div id="correlation" class="tab-pane fade in">
             <br>
-            <p>We flaten the network into a matrix of similarity estimates that can be further analyzed. The darker the orange area, the stronger the positive correlation between students; the darker the grey area, the stronger the negative correlation. Students in this graph have been ordered by the most important component of the noise reduction procedures we used to filter the data - the order shows some initial clustering of scholars.</p>
+            <p><em>We flaten the network into a matrix of similarity estimates that can be further analyzed. The darker the orange area, the stronger the positive correlation between students; the darker the grey area, the stronger the negative correlation. Students in this graph have been ordered by the most important component of the noise reduction procedures we used to filter the data - the order shows some initial clustering of scholars.</em></p>
             <script
                           src="js/correlation_0.js"
                           id="correlation_0"
@@ -172,7 +174,7 @@
       </div>
       <div id="cluster" class="tab-pane fade in">
             <br>
-            <p>The first two components from the noise-reduction procedure capture over 92% of all the information from the network cloud. Using these first two components to map scholar similarity enables the use of a cluster analysis, which produces 15 clusters, in each of which scholars are more similar to each other than they are to scholars in other clusters.</p>
+            <p><em>The first two components from the noise-reduction procedure capture over 92% of all the information from the network cloud. Using these first two components to map scholar similarity enables the use of a cluster analysis, which produces 15 clusters, in each of which scholars are more similar to each other than they are to scholars in other clusters.</em></p>
             <script
                           src="js/cluster_0.js"
                           id="cluster_0"
@@ -197,7 +199,7 @@
       <div class="row">
             <div class="plotholder col-md-8">
                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculated difference between current scholar performance and cluster average</p>
-                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Resulting index prioritizes scholars in terms of which students are most likely to improve the greatest amont in response to extra help and attention</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Resulting index prioritizes scholars in terms of which students are most likely to improve the greatest amount in response to extra help and attention</p>
                     <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;The more negative an index value, the more that student is under-performing relative to cluster average</p>
                 </div>
               </div>
@@ -219,8 +221,9 @@
       </div>
       <div class="row">
             <div class="plotholder col-md-8">
-                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;A more involved analysis would create model predictions for each scholar instead of using cluster averages. This might priortize scholars differently, and would include probability estimates for each prediction, but would require more time (3-4 weeks to get results)</p>
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;A more involved analysis would create model predictions for each scholar instead of using cluster averages. This might priortize scholars differently, and would include probability estimates for each prediction, but would require more time (3-4 weeks to get results).</p>
                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Intial model results and clusters from current analysis can be mined to suggest drivers of student performance in each cluster. However, it may be more effecient to just ask targeted scholars directly to determine reasons for underperformance.</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;It's important to get feedback on how efforts based on this analysis turn out. If we can identify cases in which this analysis fails, we can develop more useful indicators for future use.</p>
                 </div>
               </div>
       <br>
