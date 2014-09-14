@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh-0.6.0.css" type="text/css" />
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://cdn.pydata.org/bokeh-0.6.0.js"></script>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+</head>
+<body>
+<nav>
+<ul class="list-unstyled main-menu">
+  <h5>My response to this case study was prepared with the following <strong>assumptions</strong> in mind.</h5>
+  <ul>
+            <li><strong>Short timeframe. </strong>The summative math assessment is coming up quickly. The principal needs to do something even more quickly in order to have a chance of improving performance. I've priorizied actionability and fast turnaround over exploring every possible angle.</li>
+            <li><strong>Comparable historical data. </strong>I've been informed that, for this case study, I should assume robust data regarding the current 5th grade class. I am also assuming equally robust and comparable data regarding previous 5th grade classes - some degree of year-over-year consistency in when and how indicators are measured.</li>
+            <li><strong>Bottom line over methodology. </strong>I'm assuming the principal doesn't really care about how I reached my conclusions as long as I can succinctly explain why I was justified in reaching them. I've left out almost all details about the methods themselves, focusing instead on the results. </li>
+            <li><strong>In-person contact. </strong>This site is barely a stand-alone document. I designed it that way. In a real-world scenario I would use this site as a read-ahead and as a refernce to facilitate an in-person conversation with the principal.</li>
+            <li><strong>Meeting in the middle. </strong>While I never assume that anyone wants jargon, I do assume the principal is willing to become an educated consumer of analysis. I can and will explain any concept or procedure a person wants to understand, but I've seen little good come from analogizing a technical concept to the point that a consumer thinks he or she does not need to ask questions about it.</li>
+</ul>
+</nav>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <a class="navbar-brand" href="#">Middle School Case Study [prepared by Schaun Wheeler]</a>
+  <div class="navbar-header pull-right">
+    <a id="nav-expander" class="nav-expander fixed">READ THIS</a>
+  </div>
+</div>
+<div class="container-fluid" id="top">
+        <br>
+        <div class="row">
+              <div class="col-md-1"><p><a href="#"></a></p></div>
+              <div class="col-md-2"><p><a href="#introduction">Introduction</a></p></div>
+              <div class="col-md-2"><p><a href="#filter">Filter Indicators</a></p></div>
+              <div class="col-md-2"><p><a href="#similarities">Map Similarities</a></p></div>
+              <div class="col-md-2"><p><a href="#prioritize">Prioritize Scholars</a></p></div>
+              <div class="col-md-2"><p><a href="#nextsteps">Other Options</a></p></div>
+              <div class="col-md-1"><p><a href="#"></a></p></div>
+         <div>
+</div>
+
+<div class="container-fluid" id="intro">
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 id="introduction">Introduction <a href="#top" style="font-size: 12px;">[top]</a></h1>
+                  <hr>
+            </div>
+      </div>
+      <div class="row">
+            <div class="col-md-8">
+                    <h4><strong>The results of this analysis index each scholar in Middle School 1 in terms of highest potential for improvement. Using the index to allocate school/teacher resources will focus your efforts on helping those scholars who are mostly likely to respond with higher performance. </strong></h4>
+                    <br>
+            </div>
+        </div>
+      <div class="row">
+            <div class="col-md-8">
+                    <h3>Problem</h3>
+                    <hr>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Scholars in Middle School 1 under-performing across most academic and cultural indicators</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Little time to implement interventions/changes (major summative math assessment approaching)</p>
+            </div>
+        </div>
+      <div class="row">
+            <div class="col-md-8">
+                    <h3>Resources</h3>
+                    <hr>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;~250 potential predictors of summative assessment performance (tests, quizes, class work, attendance, homework, paycheck balance, etc.)</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Indicators and summative assessment performance data available across ~800 scholars per year for years 2010 through 2013</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Same indicators and performance data available across ~600 current scholars, including 79 scholars at Middle School 1</p>
+            </div>
+        </div>
+      <div class="row">
+            <div class="col-md-8">
+                    <h3>Process</h3>
+                    <hr>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Filter indictors to only include those that have been consistently predictive of summative assessment performance<p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Use filtered indicators to measure similarities among all current 5th grade scholar (across all middle schools)<p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Strain out noise in similarity data to get a few basic dimensions of scholar performance<p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Cluster scholars based on where they map onto the basic dimensions<p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Identify misclassificatons - scholars who group with high performers but who are themselves under-performing - <strong>those scholars are the best candidates for additional attention/help</strong><p>
+            </div>
+        </div>
+</div>
+
+<div class="container-fluid" id="filter">
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 id="filter">Filter Indicators <a href="#top" style="font-size: 12px;">[top]</a></h1>
+                  <hr>
+            </div>
+      </div>
+      <div class="row">
+            <div class="plotholder col-md-8">
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organized <strong>historical</strong> scholar data into a table with <strong>scholar/year</strong> as rows and <strong>indicators</strong> as columns</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Mapped each table record to eventual score in summative assessment</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Built predictive model to score each predictor in terms of its informativeness in predicting summative assessment performance</p>
+                      <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Unsurprisingly, math-related predictors tended to be most informative, but several others had enough value to retain them</p>
+                      <p><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Methods note: training the model on all students over multiple years limited the chance of idiosyncracies being mistaken for reliable predictors</p>
+                </div>
+              </div>
+      <div class="row">
+      <div class="plotholder col-md-8">
+      <script
+                    src="js/debris_plot_0.js"
+                    id="debris_plot_0"
+                    async="true"
+                    data-bokeh-data="static"
+                    data-bokeh-modelid="debris_plot_0"
+                    data-bokeh-modeltype="Plot"
+                    ></script>
+          </div>
+      </div>
+</div>
+
+<div class="container-fluid" id="similarities">
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 id="filter">Map Similarities <a href="#top" style="font-size: 12px;">[top]</a></h1>
+                  <hr>
+            </div>
+      </div>
+      <div class="row">
+            <div class="plotholder col-md-8">
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organized <strong>current</strong> scholar data into a table with <strong>retained indicators</strong> as rows and <strong>individual scholars</strong> as columns</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculate similarity (correlation) between every pair of scholars</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Statistically create indices that account for the greatest amont of differences within the similarity network</p>
+                      <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Cluster scholars into groups that reflect major differences in groups of attributes</p>
+                      <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Identify clusters that are majority high-performing but contain low performers from Middle School 1</p>
+                      <br>
+                </div>
+              </div>
+      <div class="row">
+      <div class="plotholder col-md-8">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="active"><a href="#network" data-toggle="tab">Similarity Network</a></li>
+                    <li><a href="#correlation" data-toggle="tab">Correlation Matrix</a></li>
+                    <li><a href="#cluster" data-toggle="tab">Cluster Mapping</a></li>
+            </ul>
+      <div id="myTabContent" class="tab-content">
+      <div id="network" class="tab-pane fade in active">
+            <br>
+            <p>This graph visualizes scholar similarities as a network cloud. It puckers in many different spots - those are individual scholars. Notice the cloud looks more dense in some places: a particularly dark area runs from the bottom-left to the top-right. That indicates that there is some  structure to student similarities that can be mined for insights.</p>
+            <script
+                          src="js/network_0.js"
+                          id="network_0"
+                          async="true"
+                          data-bokeh-data="static"
+                          data-bokeh-modelid="network_0"
+                          data-bokeh-modeltype="Plot"
+                          ></script>
+      </div>
+      <div id="correlation" class="tab-pane fade in">
+            <br>
+            <p>We flaten the network into a matrix of similarity estimates that can be further analyzed. The darker the orange area, the stronger the positive correlation between students; the darker the grey area, the stronger the negative correlation. Students in this graph have been ordered by the most important component of the noise reduction procedures we used to filter the data - the order shows some initial clustering of scholars.</p>
+            <script
+                          src="js/correlation_0.js"
+                          id="correlation_0"
+                          async="true"
+                          data-bokeh-data="static"
+                          data-bokeh-modelid="correlation_0"
+                          data-bokeh-modeltype="Plot"
+                          ></script>
+      </div>
+      <div id="cluster" class="tab-pane fade in">
+            <br>
+            <p>The first two components from the noise-reduction procedure capture over 92% of all the information from the network cloud. Using these first two components to map scholar similarity enables the use of a cluster analysis, which produces 15 clusters, in each of which scholars are more similar to each other than they are to scholars in other clusters.</p>
+            <script
+                          src="js/cluster_0.js"
+                          id="cluster_0"
+                          async="true"
+                          data-bokeh-data="static"
+                          data-bokeh-modelid="cluster_0"
+                          data-bokeh-modeltype="Plot"
+                          ></script>
+      </div>
+    </div>
+          </div>
+      </div>
+</div>
+
+<div class="container-fluid" id="prioritize">
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 id="filter">Prioritize Scholars <a href="#top" style="font-size: 12px;">[top]</a></h1>
+                  <hr>
+            </div>
+      </div>
+      <div class="row">
+            <div class="plotholder col-md-8">
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculated difference between current scholar performance and cluster average</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Resulting index prioritizes scholars in terms of which students are most likely to improve the greatest amont in response to extra help and attention</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;The more negative an index value, the more that student is under-performing relative to cluster average</p>
+                </div>
+              </div>
+      <br>
+      <div class="row">
+      <div class="tableholder col-md-8">
+          <script type="text/javascript" src="js/dataframe_table.js"  id="dataframe_table"></script>
+      </div>
+      </div>
+</div>
+
+
+<div class="container-fluid" id="nextsteps">
+      <div class="row">
+            <div class="col-md-12">
+                  <h1 id="filter">Other Options <a href="#top" style="font-size: 12px;">[top]</a></h1>
+                  <hr>
+            </div>
+      </div>
+      <div class="row">
+            <div class="plotholder col-md-8">
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;A more involved analysis would create model predictions for each scholar instead of using cluster averages. This might priortize scholars differently, and would include probability estimates for each prediction, but would require more time (3-4 weeks to get results)</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Intial model results and clusters from current analysis can be mined to suggest drivers of student performance in each cluster. However, it may be more effecient to just ask targeted scholars directly to determine reasons for underperformance.</p>
+                </div>
+              </div>
+      <br>
+</div>
+
+
+
+<div id="footer"><hr><p>Success Academy Charter Schools internal use only.</p></div>
+
+</body>
+
+</html>
