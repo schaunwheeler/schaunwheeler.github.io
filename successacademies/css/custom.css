@@ -58,7 +58,7 @@ a.nav-expander {
   text-transform: uppercase;
   top: 0;
   transition: right 0.3s ease-in-out 0s;
-  width: 125px;
+  width: 225px;
   z-index: 12;
   transition: right 0.3s ease-in-out 0s;
   -webkit-transition: right 0.3s ease-in-out 0s;

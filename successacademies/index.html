@@ -32,7 +32,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
   <a class="navbar-brand" href="#">Middle School Case Study [prepared by Schaun Wheeler]</a>
   <div class="navbar-header pull-right">
-    <a id="nav-expander" class="nav-expander fixed">READ THIS</a>
+    <a id="nav-expander" class="nav-expander fixed">CASE STUDY CONTEXT <span class="glyphicon glyphicon-play"</span></a>
   </div>
 </div>
 <div class="container-fluid" id="top">
@@ -100,11 +100,11 @@
       </div>
       <div class="row">
             <div class="plotholder col-md-8">
-                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organized <strong>historical</strong> scholar data into a table with <strong>scholar/year</strong> as rows and <strong>indicators</strong> as columns</p>
-                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Mapped each table record to eventual score in summative assessment</p>
-                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Built predictive model to score each predictor in terms of its informativeness in predicting summative assessment performance</p>
-                      <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Unsurprisingly, math-related predictors tended to be most informative, but several others had enough value to retain them</p>
-                      <p><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Methods note: training the model on all students over multiple years limited the chance of idiosyncracies being mistaken for reliable predictors</p>
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organize <strong>historical</strong> scholar data into a table with <strong>scholar/year</strong> as rows and <strong>indicators</strong> as columns</p>
+                   <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Map each table record to eventual score in summative assessment</p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Build statistical model to score each indicator in terms of its informativeness in predicting summative assessment performance</p>
+                      <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Unsurprisingly, math-related predictors tend to be most informative, but several others have enough value to retain them</p>
+                      <p><span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Methods note: training the model on all students over multiple years limits the chance of idiosyncracies being mistaken for reliable predictors</p>
                       <br>
                       <p><em>The following graph shows a high-level view of which indicators were most useful in predicting performance on the summative assessment.  Each indicator has multiple values because indicators are repeated over the school year (multiple quizzes, multiple weeks of attendance measures, etc.) The colors show which indicators were in the top percentile of predictive power, which were in the next decile,  and then the next two deciles, and then all the rest. You can see that some indicators had a single most important exemplar while other indicators were predictive when taken all together. Also note that while most informative indicators came, unsurprisingly, from the math category, some other academic and cultural variables were important as well.</em></p>
                 </div>
@@ -132,7 +132,7 @@
       </div>
       <div class="row">
             <div class="plotholder col-md-8">
-                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organized <strong>current</strong> scholar data into a table with <strong>retained indicators</strong> as rows and <strong>individual scholars</strong> as columns</p>
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Organize <strong>current</strong> scholar data into a table with <strong>retained indicators</strong> as rows and <strong>individual scholars</strong> as columns</p>
                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculate similarity (correlation) between every pair of scholars</p>
                     <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Statistically create indices that account for the greatest amont of differences within the similarity network</p>
                       <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Cluster scholars into groups that reflect major differences in groups of attributes</p>
@@ -198,7 +198,7 @@
       </div>
       <div class="row">
             <div class="plotholder col-md-8">
-                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculated difference between current scholar performance and cluster average</p>
+                  <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Calculate difference between current scholar performance and cluster average</p>
                    <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Resulting index prioritizes scholars in terms of which students are most likely to improve the greatest amount in response to extra help and attention</p>
                     <p><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;The more negative an index value, the more that student is under-performing relative to cluster average</p>
                 </div>
@@ -207,6 +207,10 @@
       <div class="row">
       <div class="tableholder col-md-8">
           <script type="text/javascript" src="js/dataframe_table.js"  id="dataframe_table"></script>
+      </div>
+      <div class="tableholder col-md-8">
+          <br>
+          <p><em>* Click on a column header to sort or filter the table.</em></p>
       </div>
       </div>
 </div>
