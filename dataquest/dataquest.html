@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">cStringIO</span> <span class="kn">import</span> <span class="n">StringIO</span>
@@ -11833,7 +11833,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
@@ -11878,7 +11878,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">Series</span>
@@ -11903,7 +11903,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">df</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -11949,7 +11949,7 @@ dtype: int64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">df</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -11995,7 +11995,7 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">pct_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">is_spam</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
@@ -12042,7 +12042,7 @@ dtype: float64
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="p">(</span><span class="n">pct_sorted</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span> <span class="o">-</span> <span class="n">pct_sorted</span><span class="p">[</span><span class="mf">0.0</span><span class="p">])</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -12082,7 +12082,247 @@ dtype: float64
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Looking at the list a lot of the spammy words do, in fact, look spamy ('prices', 'clicks', 'money', 'online', etc.), and many of the hammy words look like exactly what we would expect to find in emails at Enron in the year 2000 (such as the words "Enron" and "2000").</p><p>But 1000 words is a lot. We don't want to have to eyeball percentages per word to get a classification. There is where a Naive Bayes implementation comes in handy, and scikit-learn has just such an implemenation. First, though, let's set up some training data and test data:</p>
+<p>Looking at the list a lot of the spammy words do, in fact, look spamy ('prices', 'clicks', 'money', 'online', etc.), and many of the hammy words look like exactly what we would expect to find in emails at Enron in the year 2000 (such as the words "Enron" and "2000").</p><p>But 1000 words is a lot. We don't want to have to eyeball percentages per word to get a classification. There is where a Naive Bayes implementation comes in handy, and scikit-learn has just such an implemenation. First, though, let's look a toy example.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Toy Example</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Our full data set is 5172 emails by 1000 words. Let's take a small snippet of that to run through the details of calculating a Naive Bayes classification:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># choose just a few words</span>
+<span class="n">keep_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">,</span> <span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="s1">&#39;set&#39;</span><span class="p">,</span> <span class="s1">&#39;thanks&#39;</span><span class="p">,</span> <span class="s1">&#39;12&#39;</span><span class="p">,</span> <span class="s1">&#39;nomination&#39;</span><span class="p">]</span>  
+
+<span class="c1"># grab five spam and five ham emails, and reduce the columns to only those chosen above</span>
+<span class="n">df_toy</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">is_spam</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">keep_cols</span><span class="p">]</span> 
+
+<span class="c1"># filter the spam indicator to only include the emails kept in the predictors dataset</span>
+<span class="n">is_spam_toy</span> <span class="o">=</span> <span class="n">is_spam</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_toy</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>  
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can train a classifier on the toy data. First count up the total number of emails - this is just the number of rows in your data set. Then separate the emails into spam and ham. I used a dictionary to do that:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># count up the total number of emails</span>
+<span class="n">email_count</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">df_toy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># separate emails into spam and ham (remember 0 == ham, 1 == spam)</span>
+<span class="n">separated</span> <span class="o">=</span> <span class="n">df_toy</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">is_spam</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span> <span class="n">p</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="k">print</span> <span class="n">separated</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{0.0: array([[0, 0, 0, 0, 0, 0],
+       [0, 0, 1, 1, 8, 1],
+       [0, 0, 0, 0, 0, 2],
+       [0, 0, 0, 1, 5, 0],
+       [0, 0, 0, 1, 5, 1]]), 1.0: array([[1, 1, 0, 0, 0, 0],
+       [0, 0, 0, 1, 0, 0],
+       [1, 0, 0, 0, 0, 0],
+       [0, 0, 2, 0, 0, 0],
+       [2, 1, 1, 0, 2, 0]])}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we need to calculate the prior for each class. That's just the number of emails in each class divided by the total number of rows.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="n">class_prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">/</span> <span class="n">email_count</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">separated</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="n">class_log_prior</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">log</span><span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="ow">in</span> <span class="n">class_prior</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<span class="k">print</span> <span class="s1">&#39;class priors:&#39;</span><span class="p">,</span> <span class="n">class_prior</span>
+<span class="k">print</span> <span class="s1">&#39;log of class priors&#39;</span><span class="p">,</span> <span class="n">class_log_prior</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class priors: {0.0: 0.5, 1.0: 0.5}
+log of class priors {0.0: 0.40546510810816438, 1.0: 0.40546510810816438}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that the prior for both classes is 0.5. That's because we selected an equal number of emails from each class for our toy example. Notice also that I took the log of the priors. That's a safeguard. When you have data sets where most of the values are zero (common in text classification problems), your percentages can get so small that they truncated to zero. That's because floating point numbers don't have infinite precision. Logging those numbers avoids that problem. Notice that I actually took the log of one plus the prior. That's because the log of zero is undefined. Adding the one keeps keeps that from becoming a problem.</p><p><p>So now we need the word probabilities. First, we count up the total number of times each word appears in each class. Then we count up the number of total words per class. Then we divide the word counts by the total words and, as before, take the log of one plus that number.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Number of time each word appears in each class</span>
+<span class="n">word_counts</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">separated</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="c1"># Number of times any word appears in each class</span>
+<span class="n">total_words_per_class</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">word_counts</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="c1"># Word counts divided by total words</span>
+<span class="n">feature_prob</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">total_words_per_class</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">word_counts</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="c1"># Log to avoid floating-point underflow</span>
+<span class="n">feature_log_prob</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">log</span><span class="p">(</span><span class="n">v</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">feature_prob</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So now we have all the numbers we need to classify the emails. In this case, we're going to predict the classifications of the emails we used to train the classifier. Normally, that would be a really bad idea - it leads to overfitting, where the model performs better than we can expect it to in real life because it essentially had the answers to the problem beforehand. We'll do things right when we classify the whole dataset below, but for right now, predicting the test data allows us to see how the classifications work.</p><p>The first step is to calculate the log probability for each email for each class (ham vs. spam). Classification involves chosing whichever log probability is higher for each email.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">concat</span>
+
+<span class="c1"># create a Series of log probabilities. There will be as many Series as their are classes</span>
+<span class="c1"># and each series will have as many values as there are emails.</span>
+<span class="n">predict_log_prob</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="p">(</span><span class="n">df_toy</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="n">class_log_prior</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
+                    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">feature_log_prob</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="c1"># Concatenate the Series into a dataframe, with one column per class. Go through each</span>
+<span class="c1"># row and pick the column that represents the higher log probability.</span>
+<span class="n">predict_class</span> <span class="o">=</span> <span class="n">concat</span><span class="p">(</span><span class="n">predict_log_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">argmax</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># show original data and predictions side by side</span>
+<span class="n">comparison</span> <span class="o">=</span> <span class="n">concat</span><span class="p">([</span><span class="n">is_spam_toy</span><span class="p">,</span> <span class="n">predict_class</span><span class="p">],</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;original&#39;</span><span class="p">,</span> <span class="s1">&#39;predictions&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">comparison</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>      original  predictions
+0          1.0          1.0
+1          1.0          0.0
+2          1.0          1.0
+3          1.0          1.0
+4          1.0          1.0
+1500       0.0          0.0
+1501       0.0          0.0
+1502       0.0          0.0
+1503       0.0          0.0
+1504       0.0          0.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can see that the classifier picked the right classificaton in all but one case. Because we were dealing with a very small data set, and because some spam contains words that often appear in ham while some ham contains words that often appear in spam, we wouldn't expect performance to be perfect. Again, the performance we see here is probably much better than what we would expect if we tried to predict emails that weren't included in the training set. That's what we'll do in the next section.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2>Full Implmentation</h2>
 </div>
 </div>
 </div>
@@ -12169,10 +12409,10 @@ dtype: float64
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>             precision    recall  f1-score   support
 
-        0.0       0.96      0.93      0.95       746
-        1.0       0.84      0.90      0.87       289
+        0.0       0.96      0.94      0.95       729
+        1.0       0.86      0.92      0.89       306
 
-avg / total       0.93      0.92      0.93      1035
+avg / total       0.93      0.93      0.93      1035
 
 </pre>
 </div>
@@ -12209,8 +12449,8 @@ avg / total       0.93      0.92      0.93      1035
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[[697  49]
- [ 29 260]]
+<pre>[[683  46]
+ [ 25 281]]
 </pre>
 </div>
 </div>
