@@ -175,7 +175,7 @@ In the dataset provided, there were 17 drug categories, 90 drug groups, and 424 
 
     5. I tend to use a forest model (random or gradient boosting) for this process since it is relatively robust to overfitting and implicitly handles interactions. However, given both the large number of potential predictors as well as the size of the data set, I would probably lean towards something more scalable like stochastic gradient boosting fit with L1 regularization to do online feature selection. This would shrink the coefficients of many of the predictors to zero, and leave the rest rankable by the absolute value of the coefficient.
 
-3. Cross-validate increasingly simpler models until increased simplicity results in substantially lower accuracy
+3. Cross-validate increasingly simple models until increased simplicity results in substantially lower accuracy
 
     6. I would pick a cost function. A plain error rate could work, but depending on the business needs that prompted the need to predict the category, I might use a combination of false positive rate and false negative rate, each weighted by how costly that specific type of error was to the business.
 
