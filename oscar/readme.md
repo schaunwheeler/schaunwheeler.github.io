@@ -2,6 +2,8 @@
 
 Prepared by Schaun Wheeler, 8 April 2017
 
+[Click here for the code](https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/claims.py)
+
 **Overview**
 
 The first task was to define the health status of all 100,000 members in the given dataset. I did this through the following process:
