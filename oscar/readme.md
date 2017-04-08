@@ -2,7 +2,7 @@
 
 Prepared by Schaun Wheeler, 8 April 2017
 
-<a href="https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/claims.py" target="_blank">Click here for the code in a new tab</a>
+<a href="https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/claims.py" target="_blank">Click here for the code</a>
 
 **Overview**
 
