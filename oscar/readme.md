@@ -1,4 +1,4 @@
-**Oscar Health Case Study**
+#Oscar Health Case Study#
 
 Prepared by Schaun Wheeler, 8 April 2017
 
