@@ -27,9 +27,9 @@ This is the number of null labels in each category before and after nullifying t
 
 <table>
   <tr>
-    <td>CCS data field</td>
-    <td>% null with "other" labels</td>
-    <td>% null without “other” labels</td>
+    <th>CCS data field</th>
+    <th>% null with "other" labels</th>
+    <th>% null without “other” labels</th>
   </tr>
   <tr>
     <td>ccs_2_desc</td>
