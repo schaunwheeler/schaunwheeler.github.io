@@ -177,7 +177,7 @@ general_labels = ['No current diagnoses or symptoms', 'Preventative or prelimina
 member_status['status_summary'] = member_status['status_detail'].\
     where(member_status['status_detail'].isin(general_labels))
 single_status = member_status['status_detail'].str.count('[|]').eq(0)
-member_status.loc[member_status['status_summary'].isnull() & single_status] = 'Single diagnoisis'
+member_status.loc[member_status['status_summary'].isnull() & single_status, 'status_summary'] = 'Single diagnoisis'
 member_status['status_summary'] = member_status['status_summary'].fillna('Multiple diagnoses')
 
 # prescr = read_csv(prescr_path)
