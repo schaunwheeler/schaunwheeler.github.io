@@ -1,10 +1,10 @@
-#Oscar Health Case Study#
+# Oscar Health Case Study
 
 Prepared by Schaun Wheeler, 8 April 2017
 
 <a href="https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/claims.py" target="_blank">Click here for the code</a>
 
-**Overview**
+## Overview
 
 The first task was to define the health status of all 100,000 members in the given dataset. I did this through the following process:
 
@@ -16,7 +16,7 @@ The first task was to define the health status of all 100,000 members in the giv
 
 The second task was to describe how I would go about predicting one or more the health statuses based on prescription drug data. 
 
-**Consolidate labels**
+## Consolidate labels
 
 At each level of the category ontology after ccs_1, for most parent categories, there exists an 'other' category that gives no new information beyond the fact of the parent category. For example, one of the level-2 categories under the "Congenital anomalies" parent category is “Other congenital anomalies” Those labels can be considered null.
 
@@ -56,7 +56,7 @@ Of the 100000 members in the data set, over 75,000 have at least one claim falli
 
 Applying these substitutions ultimately results in 527 distinct labels if all four levels of the CCS hierarchy are used, 385 labels if only the first three levels are used, 129 if the first two are used, and 17 labels if only the top level is used. For the discussion below, I used all four level of the hierarchy, and therefore deal with 527 distinct label possibilities per claim.
 
-**Define an active window**
+## Define an active window
 
 Once we have our list of valid labels, we need to decide which claims represent current health status rather than simply being a part of the a member’s medical history. Do do this, I calculated the number of days between recurrences of level-1 CCS labels. For each of those labels, 95% of all recurrences happened within the window specified below.
 
@@ -142,7 +142,7 @@ Once we have our list of valid labels, we need to decide which claims represent 
 
 Therefore, we could consider any claim occurring within the active window as having a high chance of re-occuring. 
 
-**Compile health status for each member**
+## Compile health status for each member
 
 The final part of the task was to consolidate each member’s recent claim history into a current status. For each member, I followed the following procedures:
 
@@ -154,7 +154,7 @@ The final part of the task was to consolidate each member’s recent claim histo
 
 The above process results in 60163 members having a health status of "No current diagnoses or symptoms", 4337 members having a health status of simply “Preventative or preliminary care”, and 11068 members having a health status comprised of a single diagnosis. The remaining 24% of the members in the dataset had some combination of diagnoses - sometimes as many as 12, but usually between 2 and 4.
 
-**Predict labels**
+## Predict labels
 
 In the dataset provided, there were 17 drug categories, 90 drug groups, and 424 drug classes. We need this data in a format that matches the format of the categories we are trying to predict (one row per member). I would approach the task of predicting, say, the "No current diagnoses or symptoms" label, or those members with multiple labels, through the following process:
 
