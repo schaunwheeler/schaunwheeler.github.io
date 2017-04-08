@@ -65,8 +65,8 @@ Once we have our list of valid labels, we need to decide which claims represent 
 
 <table>
   <tr>
-    <td>Level-1 Label</td>
-    <td>Window</td>
+    <th>Level-1 Label</th>
+    <th>Window</th>
   </tr>
   <tr>
     <td>Diseases of the skin and subcutaneous tissue</td>
