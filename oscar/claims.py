@@ -7,7 +7,7 @@ to claims data, and then selecting which claims to use to characterize a member'
 from pandas import read_csv, to_datetime
 from os.path import join
 
-CSV_SOURCE_DIR = '/Users/swheeler/Downloads/Oscar Case Study/'
+CSV_SOURCE_DIR = '~/'
 PRESCRIPTION_FILE = 'prescription_drugs.csv'
 CLAIMS_FILE = 'claim_lines.csv'
 CCS_FILE = 'ccs.csv'
