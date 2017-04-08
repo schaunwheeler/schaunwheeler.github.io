@@ -4,7 +4,7 @@ Prepared by Schaun Wheeler, 8 April 2017
 
 <a href="https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/claims.py" target="_blank">Click here for the code</a>
 
-<a href="https://github.com/schaunwheeler/schaunwheeler.github.io/blob/master/oscar/member_status.csv" target="_blank">Click here for the output (CSV format)</a>
+<a href="https://raw.githubusercontent.com/schaunwheeler/schaunwheeler.github.io/master/oscar/member_status.csv" target="_blank">Click here for the output (CSV format)</a>
 
 
 ## Overview
