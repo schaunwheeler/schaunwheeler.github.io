@@ -51,16 +51,19 @@ def structure_ccs_table(filepath, use_levels=4, replacements=None, new_label='Pr
     for col in desc_cols[1:]:
         ccs_df.loc[ccs_df[col].str.startswith('Other').fillna(False), col] = None
 
+    # choose a final label and record what level it was taken from
     for col in reversed([x for x in desc_cols if int(x.split('_')[1]) in range(1, use_levels + 1)]):
         needs_to_be_filled = ccs_df['description'].isnull()
         ccs_df.loc[needs_to_be_filled, 'description'] = ccs_df.loc[needs_to_be_filled, col]
         ccs_df.loc[needs_to_be_filled, 'level'] = int(col.split('_')[1])
 
+    # do replacements, if any
     if replacements is not None:
         for k, v, in replacements.items():
             ccs_df.loc[ccs_df[k].isin(v), 'description'] = new_label
             ccs_df.loc[ccs_df[k].isin(v), 'ccs_1_desc'] = new_label
 
+    # this is a streamlined version with only one unique label per row
     ref = ccs_df.drop_duplicates(subset=['description'])
 
     return ccs_df, ref
@@ -96,7 +99,6 @@ def structure_claims_data(filepath, ccs_lookup, gap_pct=0.95, diagnostics=False)
     claims['date_svc'] = to_datetime(claims['date_svc']).apply(lambda v: v.date())
 
     reference_date = claims['date_svc'].max()
-    # member_date_count = claims.groupby(['member_id', 'date_svc'])['record_id'].count().to_frame('count').reset_index()
     member_date_desc_count = claims.groupby(['member_id', 'date_svc', 'ccs_1_desc'])['record_id'].count().\
         to_frame('count').reset_index().sort_values(['member_id', 'ccs_1_desc'])
 
@@ -170,9 +172,16 @@ replace_dict = {
     ]
 }
 
+# get css lookup tables
 ccs, ccs_ref = structure_ccs_table(ccs_path, use_levels=1, replacements=replace_dict)
+
+# append label to claims data
 mem_df = structure_claims_data(claims_path, ccs, gap_pct=0.95, diagnostics=False)
+
+# get consolidated status per member
 member_status = mem_df.groupby('member_id').apply(get_member_status).to_frame('status_detail')
+
+# create simplified status
 general_labels = ['No current diagnoses or symptoms', 'Preventative or preliminary care']
 member_status['status_summary'] = member_status['status_detail'].\
     where(member_status['status_detail'].isin(general_labels))
