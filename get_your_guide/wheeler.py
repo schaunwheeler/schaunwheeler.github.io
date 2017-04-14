@@ -9,7 +9,7 @@ from os.path import join
 from sklearn.linear_model import SGDRegressor
 from sklearn.model_selection import KFold
 
-CSV_SOURCE_DIR = '~/'
+CSV_SOURCE_DIR = '/Users/swheeler/Downloads/ds_ana_assessment/'
 TRAIN_FILE = 'train.csv'
 TEST_FILE = 'prediction.csv'
 
