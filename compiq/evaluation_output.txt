@@ -1,0 +1,105 @@
+Total number of records: 1552300
+Probability of record being chosen for training set: 0.1
+
+==Training model now==
+Feature extraction settings: HashingVectorizer(analyzer='word', binary=False, decode_error=u'strict',
+         dtype=<type 'numpy.float64'>, encoding=u'utf-8', input=u'content',
+         lowercase=True, n_features=1048576, ngram_range=(1, 1),
+         non_negative=True, norm='l1', preprocessor=None,
+         stop_words='english', strip_accents=None,
+         token_pattern=u'(?u)\\b\\w\\w+\\b', tokenizer=None)
+Model settings: MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
+Number of records evaluated: 200000.
+    Time to pull and clean records: 22.8102469444 seconds.
+    Time to fit records: 34.5455620289 seconds.
+Number of records evaluated: 400000.
+    Time to pull and clean records: 25.1185200214 seconds.
+    Time to fit records: 45.333687067 seconds.
+Number of records evaluated: 600000.
+    Time to pull and clean records: 26.4000399113 seconds.
+    Time to fit records: 51.5444209576 seconds.
+Number of records evaluated: 800000.
+    Time to pull and clean records: 29.4337749481 seconds.
+    Time to fit records: 63.9972121716 seconds.
+Number of records evaluated: 1000000.
+    Time to pull and clean records: 27.9062168598 seconds.
+    Time to fit records: 62.719233036 seconds.
+Number of records evaluated: 1200000.
+    Time to pull and clean records: 32.4106869698 seconds.
+    Time to fit records: 77.313544035 seconds.
+Number of records evaluated: 1400000.
+    Time to pull and clean records: 32.3164770603 seconds.
+    Time to fit records: 84.1292159557 seconds.
+Number of records evaluated: 1552300.
+    Time to pull and clean records: 25.1196429729 seconds.
+    Time to fit records: 67.7015860081 seconds.
+
+Number of records randomly selected for test set: 149811
+Number of features in test set: 89015
+Classification accuracy: 46.3%
+Number of unique categories: 56
+Number of unique predicted categories: 4
+
+Test set category breakdown: 
+Driver / Transportation / Maritime                   56444
+Healthcare / Physician / Nursing                     17270
+Healthcare / Allied Health / Wellness                 6503
+Sales / Sales Management / Business Development       6275
+Retail                                                5908
+Insurance                                             4612
+Restaurant / Food Service                             3997
+Graphic Design / CAD                                  3659
+Customer Service / Call Center / Telemarketing        3572
+Caregiving / Babysitting                              3116
+IT / Software / Systems                               2977
+Education / Teaching                                  2730
+Accounting                                            2353
+Construction / Facilities / Trades                    2287
+Work at Home / Business Opp                           2007
+Advertising / Marketing / PR                          1878
+Warehouse / Logistics / Distribution                  1823
+Publishing / Journalism / Media                       1786
+Banking / Mortgage / Finance                          1679
+Social Services / Counseling                          1623
+Automotive / Mechanic                                 1405
+Manufacturing / Industrial / Mining                   1254
+Management (Non-Executive)                            1231
+Science / Research                                    1022
+Arts / Entertainment                                   919
+Hospitality / Hotel                                    916
+General Labor / Entry-Level                            900
+Management (Executive)                                 753
+Airline / Aviation                                     718
+Fashion / Beauty / Grooming                            715
+Telecom / Wireless / Cable                             689
+Internet / E-commerce                                  580
+Other / Miscellaneous                                  501
+Law Enforcement / Security                             489
+Chemical                                               487
+Administrative / Clerical                              484
+HR / Staffing / Training                               463
+Bilingual Services / Interpretation / Translation      393
+Legal / Lawyer                                         389
+Real Estate / Property Mgmt                            362
+Sports / Fitness / Recreation                          344
+Energy / Power / Utilities                             325
+Architecture                                           323
+Purchasing / Merchandising / Procurement               275
+Aerospace                                              261
+Biotech / Pharmaceutical                               229
+Veterinary Services                                    226
+Electronics / Computer Hardware                        219
+Design / Decorating                                    152
+Environmental / Green / Waste Management               144
+Non-Profit / Fundraising                                63
+Consumer Products / CPG / Packaging                     39
+Consulting / Professional Services                      24
+Government / Civil Service                              17
+Military / Defense                                       1
+
+Predicted category breakdown: 
+Driver / Transportation / Maritime       135133
+Healthcare / Physician / Nursing          14262
+Education / Teaching                        314
+Healthcare / Allied Health / Wellness       102
+

@@ -1,0 +1,9 @@
+The model got 46.3% accuracy, which clearly isn't good enough (just guessing the most common industry category -
+"Driver / Transportation / Maritime" - for all values would have yielded 37.4% accuracy). I think the basic method
+is sound. In fact, given the size of the data set and the number of features that can be extracted, there aren't a
+great number of other options. A few things could improve performance, listed here in order of expected impact:
+
+1. Set up a pipeline of binary classification models instead of one model to predict all classifications.
+2. Lemmatize texts to remove noise.
+3. Consider n-gram features instead of single word features to capture more semantics.
+4. Compile a custom list of words that occur commonly across most job announcements and remove those words.

@@ -1,0 +1,9 @@
+1. Combine 'city', 'company', 'title', and 'description' fields into a single text string.
+2. Remove all html tags and punctuation and lowercase all characters.
+3. Hash the words in each text string into a sparse matrix (see en.wikipedia.org/wiki/Feature_hashing)
+4. Perform l1 regularization on the hashed matrix to minimize the chances of overfitting
+5. Feed the hashed term-document matrix into a Multinomial Naive Bayes model 200,000 records at a time (to avoid memory
+    constraints).
+6. Randomly withdold roughly 150,000 (about 10%) of the records in order to evaluated the fit of the model.
+7. Predict the probability of each industry category for those ~150,000 withheld data points.
+8. Calculate the percentge of the time that the highest-probability category matches the actual category.
